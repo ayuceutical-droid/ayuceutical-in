@@ -5,7 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ayuceutical Academy | Ayurvedic Pharma-Tech Mentorship in India</title>
 <meta name="description" content="Rasashastra and Ayurvedic pharma-tech mentorship in India. Campus workshops for colleges and small-cohort mentorship for doctors and students. Four zones, four certification levels, taught by MD specialists.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0A0805">
 <link rel="canonical" href="https://ayuceutical.in/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0805'/><text x='16' y='24' font-family='Georgia,serif' font-size='22' fill='%23D4A940' text-anchor='middle'>A</text></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Ayuceutical Academy">
+<meta property="og:url" content="https://ayuceutical.in/">
+<meta property="og:title" content="Ayuceutical Academy | Ayurvedic Pharma-Tech Mentorship in India">
+<meta property="og:description" content="Campus workshops for Ayurvedic colleges and small-cohort mentorship for doctors and students. Four zones, four certification levels, taught by MD specialists.">
+<meta property="og:image" content="https://ayuceutical.in/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ayuceutical Academy | Ayurvedic Pharma-Tech Mentorship in India">
+<meta name="twitter:description" content="Campus workshops for Ayurvedic colleges and small-cohort mentorship for doctors and students.">
+<meta name="twitter:image" content="https://ayuceutical.in/og.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -48,26 +66,17 @@ nav a:hover{color:var(--cream);border-bottom-color:var(--gold)}
 .btn:hover{background:var(--gold);color:var(--ink)}
 .btn-solid{background:var(--gold);color:var(--ink);font-weight:500}
 .btn-solid:hover{background:var(--cream);border-color:var(--cream)}
-.menu-btn{display:none;background:none;border:1px solid var(--ink-line);color:var(--cream);padding:.5rem .8rem;font-family:var(--body);font-size:.85rem}
+.menu-btn{display:none;background:none;border:1px solid var(--ink-line);color:var(--cream);padding:.55rem .9rem;font-family:var(--body);font-size:.85rem;letter-spacing:.06em;cursor:pointer}
 
 .hero{padding:7rem 0 5rem;border-bottom:1px solid var(--ink-line)}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:5rem;align-items:start}
 figure{margin:0}
+/* image slots retained for when photography is ready */
 .shot{position:relative;display:block;width:100%;background:var(--ink-soft);border:1px solid var(--ink-line);overflow:hidden}
 .shot img{display:block;width:100%;height:100%;object-fit:cover}
-.shot::after{content:attr(data-slot);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;font-size:.78rem;letter-spacing:.1em;color:var(--muted)}
-.shot:has(img)::after{display:none}
 .r-wide{aspect-ratio:16/9}
 .r-tall{aspect-ratio:4/5}
-.r-square{aspect-ratio:1/1}
 .caption{font-size:.78rem;color:var(--muted);letter-spacing:.04em;margin:.7rem 0 0}
-.hero-shot{margin-top:3.5rem}
-.zone-shot{grid-column:2/-1;margin-top:1.2rem;max-width:420px}
-.portraits{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
-.portraits h3{font-size:1.15rem;margin:.8rem 0 .15rem}
-.portraits p{font-size:.8rem;color:var(--muted);margin:0}
-.video-wrap{position:relative;aspect-ratio:16/9;background:var(--ink-soft);border:1px solid var(--ink-line)}
-.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .kicker{font-size:.8rem;letter-spacing:.22em;color:var(--muted);margin:0 0 2rem;font-weight:400}
 .hero h1{font-size:clamp(2.7rem,5.6vw,4.5rem);margin-bottom:1.8rem}
 .hero p{max-width:var(--measure);color:#D8CCAC;margin:0 0 2.6rem}
@@ -95,15 +104,6 @@ section{padding:6rem 0;border-bottom:1px solid var(--ink-line)}
 .zone-lead{color:var(--muted);font-size:.85rem;letter-spacing:.08em;margin:0}
 .zone p{margin:0;color:#C4B995;font-size:.97rem}
 
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
-.tier{border:1px solid var(--ink-line);padding:2rem 1.6rem;display:flex;flex-direction:column}
-.tier.pick{border-color:var(--gold)}
-.tier-tag{font-size:.7rem;letter-spacing:.16em;color:var(--gold);margin-bottom:1.2rem;min-height:1rem}
-.tier h3{font-size:1.5rem;margin-bottom:.5rem}
-.tier .dur{font-size:.8rem;color:var(--muted);letter-spacing:.06em;margin:0 0 1rem}
-.tier p{font-size:.95rem;color:#C4B995;margin:0 0 1.6rem;flex:1}
-.tier .fee{font-size:.85rem;color:var(--muted);border-top:1px solid var(--ink-line);padding-top:1rem;margin:0}
-
 .fork{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ink-line)}
 .door{padding:3rem 2.5rem;display:flex;flex-direction:column}
 .door+.door{border-left:1px solid var(--ink-line);background:var(--ink-soft)}
@@ -114,8 +114,17 @@ section{padding:6rem 0;border-bottom:1px solid var(--ink-line)}
 .door li{padding:.55rem 0;border-top:1px solid var(--ink-line)}
 .door li:first-child{border-top:none}
 .door .who{font-size:.8rem;color:var(--muted);letter-spacing:.04em;margin:1.2rem 0 0}
+.door .btn{align-self:flex-start}
+
 .split{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 2rem;margin-top:2.5rem}
+.split h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:1.2rem}
+.split p{color:#C4B995}
+.creds{display:grid;gap:0;border:1px solid var(--ink-line);margin-bottom:2.5rem}
+.cred{padding:1.5rem 1.6rem;border-top:1px solid var(--ink-line)}
+.cred:first-child{border-top:none}
+.cred h3{font-size:1.35rem;margin-bottom:.2rem}
+.cred p{font-size:.85rem;color:var(--muted);margin:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 2rem}
 .stat b{display:block;font-family:var(--display);font-size:2.6rem;color:var(--gold);font-weight:500;line-height:1}
 .stat span{font-size:.82rem;color:var(--muted);letter-spacing:.06em}
 
@@ -124,6 +133,9 @@ section{padding:6rem 0;border-bottom:1px solid var(--ink-line)}
 .cta h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.2rem}
 .cta p{color:#C4B995;margin:0 auto 2.5rem;max-width:52ch}
 .cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-contact{font-size:.85rem;color:var(--muted);margin-top:2rem}
+.cta-contact a{text-decoration:none}
+.cta-contact a:hover{color:var(--gold)}
 
 footer{padding:4rem 0 2.5rem;font-size:.88rem;color:var(--muted)}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
@@ -134,8 +146,15 @@ footer a:hover{color:var(--gold)}
 .legal{border-top:1px solid var(--ink-line);padding-top:1.8rem;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;font-size:.8rem}
 
 @media(max-width:900px){
-  nav{display:none}
-  .menu-btn{display:block}
+  .bar{position:relative}
+  nav{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:100vw;background:var(--ink);border-top:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line);padding:.5rem 0}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;width:min(1140px,92vw);margin:0 auto;font-size:1rem}
+  nav li{border-top:1px solid var(--ink-line)}
+  nav li:first-child{border-top:none}
+  nav a{display:block;padding:.95rem 0;border-bottom:none}
+  .menu-btn{display:block;order:3}
+  .bar .btn-solid{order:2}
   .hero-grid,.split{grid-template-columns:1fr;gap:3rem}
   .zone{grid-template-columns:3rem 1fr;gap:1.2rem}
   .zone p{grid-column:2}
@@ -146,6 +165,11 @@ footer a:hover{color:var(--gold)}
   .hero{padding:4rem 0 3.5rem}
   section{padding:4rem 0}
 }
+@media(max-width:600px){
+  .bar .btn-solid{display:none}
+  .foot-grid{grid-template-columns:1fr;gap:2rem}
+  .legal{flex-direction:column;gap:.6rem}
+}
 </style>
 </head>
 <body>
@@ -154,16 +178,17 @@ footer a:hover{color:var(--gold)}
 <header>
   <div class="wrap bar">
     <a class="brand" href="/">Ayuceutical <span>Academy</span></a>
-    <nav aria-label="Primary">
+    <nav id="nav" aria-label="Primary">
       <ul>
-        <li><a href="/for-colleges">For colleges</a></li>
-        <li><a href="/programmes">Programmes</a></li>
-        <li><a href="/zones">Curriculum</a></li>
-        <li><a href="/faculty">Faculty</a></li>
-        <li><a href="/wac-2026">WAC 2026</a></li>
+        <li><a href="#zones">Curriculum</a></li>
+        <li><a href="#routes">For colleges</a></li>
+        <li><a href="#routes">Mentorship</a></li>
+        <li><a href="#faculty">Faculty</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <a class="btn btn-solid" href="#routes">Get started</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
   </div>
 </header>
 
@@ -178,7 +203,7 @@ footer a:hover{color:var(--gold)}
       <p>Colleges bring it to campus for a full batch. Individual doctors and students join a cohort directly.</p>
       <div class="hero-actions">
         <a class="btn btn-solid" href="#routes">Find your route</a>
-        <a class="btn" href="/zones">See the curriculum</a>
+        <a class="btn" href="#zones">See the curriculum</a>
       </div>
       <p class="hero-note">Delivered across India, on campus and online.</p>
     </div>
@@ -203,13 +228,6 @@ footer a:hover{color:var(--gold)}
         <span><span class="rung-name">Swarna</span><span class="rung-meta">Gold — all four, with certificate of completion</span></span>
       </div>
     </aside>
-  </div>
-
-  <div class="wrap hero-shot">
-    <figure>
-      <span class="shot r-wide" data-slot="HERO &mdash; hands at the mortar or crucible, 1600&times;900"></span>
-      <p class="caption">Preparation under supervision at the Ayuceutical Academy pharma-tech workshop.</p>
-    </figure>
   </div>
 </div>
 
@@ -273,8 +291,7 @@ footer a:hover{color:var(--gold)}
           <li><strong>Pharma-tech workshop</strong> &mdash; 1&ndash;2 days, hands-on</li>
           <li><strong>Industry partnership</strong> &mdash; discussed case by case</li>
         </ul>
-        <span class="shot r-wide" data-slot="A batch in session on campus, 1200&times;675" style="margin-bottom:1.8rem"></span>
-        <a class="btn btn-solid" href="/for-colleges">Request a proposal</a>
+        <a class="btn btn-solid" href="#contact">Request a proposal</a>
         <p class="who">For principals and RIEDC coordinators. Institutional fee; students pay nothing.</p>
       </article>
 
@@ -287,8 +304,7 @@ footer a:hover{color:var(--gold)}
           <li>Small group, so questions get answered</li>
           <li>Ends at Swarna, the full certification rung</li>
         </ul>
-        <span class="shot r-wide" data-slot="Small cohort at the bench, 1200&times;675" style="margin-bottom:1.8rem"></span>
-        <a class="btn btn-solid" href="/programmes#founder-track">Join the next cohort</a>
+        <a class="btn btn-solid" href="#contact">Join the next cohort</a>
         <p class="who">For BAMS and MD students, and practising doctors preparing to start a unit.</p>
       </article>
 
@@ -296,57 +312,43 @@ footer a:hover{color:var(--gold)}
   </div>
 </section>
 
-<section id="why">
+<section id="faculty">
   <div class="wrap split">
     <div>
-      <h2 style="font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:1.2rem">Taught by people who still do the work</h2>
-      <p style="color:#C4B995">The academy is led by Dr. Vikas Saroch and Dr. Neetika Kundailia Saroch, both MD (Ayurveda). Between clinical practice and technical direction of a GMP-certified manufacturing unit, the material taught here is the material used in production — which is why the sessions are demonstrations rather than lectures.</p>
-      <p style="color:#C4B995">Himalayan Heal Ayurvedic Pharmacy, the unit behind the teaching, holds AYUSH manufacturing licence HP-301-Ay and operates from Kangra, Himachal Pradesh.</p>
+      <h2>Taught by people who still do the work</h2>
+      <p>The academy is led by Dr. Vikas Saroch and Dr. Neetika Kundailia Saroch, both MD (Ayurveda). Between clinical practice and technical direction of a GMP-certified manufacturing unit, the material taught here is the material used in production — which is why the sessions are demonstrations rather than lectures.</p>
+      <p>Himalayan Heal Ayurvedic Pharmacy, the unit behind the teaching, holds AYUSH manufacturing licence HP-301-Ay and operates from Kangra, Himachal Pradesh.</p>
     </div>
     <div>
-    <div class="portraits">
-      <figure>
-        <span class="shot r-tall" data-slot="Dr. Vikas Saroch, 800&times;1000"></span>
-        <h3>Dr. Vikas Saroch</h3>
-        <p>MD (Ayurveda), Rasashastra</p>
-      </figure>
-      <figure>
-        <span class="shot r-tall" data-slot="Dr. Neetika Kundailia Saroch, 800&times;1000"></span>
-        <h3>Dr. Neetika Kundailia Saroch</h3>
-        <p>MD (Ayurveda)</p>
-      </figure>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>MD</b><span>Rasashastra specialisation</span></div>
-      <div class="stat"><b>GMP</b><span>Certified unit behind the teaching</span></div>
-      <div class="stat"><b>4</b><span>Curriculum zones</span></div>
-      <div class="stat"><b>17+</b><span>Peer-reviewed publications</span></div>
-    </div>
+      <div class="creds">
+        <div class="cred">
+          <h3>Dr. Vikas Saroch</h3>
+          <p>MD (Ayurveda), Rasashastra &middot; Technical Director, Himalayan Heal Ayurvedic Pharmacy</p>
+        </div>
+        <div class="cred">
+          <h3>Dr. Neetika Kundailia Saroch</h3>
+          <p>MD (Ayurveda) &middot; Co-founder</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>MD</b><span>Rasashastra specialisation</span></div>
+        <div class="stat"><b>GMP</b><span>Certified unit behind the teaching</span></div>
+        <div class="stat"><b>4</b><span>Curriculum zones</span></div>
+        <div class="stat"><b>17+</b><span>Peer-reviewed publications</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="film">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>What a workshop looks like</h2>
-      <p>Ninety seconds inside a session &mdash; the materials, the bench, and what students actually do with their hands.</p>
-    </div>
-    <div class="video-wrap">
-      <iframe src="about:blank" title="Inside an Ayuceutical Academy pharma-tech workshop" loading="lazy" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
+<section class="cta" id="contact">
   <div class="wrap">
     <h2>Tell us which route fits</h2>
     <p>Colleges: send a date range and we will send a proposal on letterhead. Individuals: tell us where you are in your training and we will point you to the right cohort.</p>
     <div class="cta-actions">
-      <a class="btn btn-solid" href="/for-colleges/book">Colleges &mdash; request a proposal</a>
-      <a class="btn" href="/programmes#founder-track">Individuals &mdash; join a cohort</a>
+      <a class="btn btn-solid" href="mailto:academy@ayuceutical.in?subject=Campus%20programme%20enquiry">Colleges &mdash; request a proposal</a>
+      <a class="btn" href="mailto:academy@ayuceutical.in?subject=Cohort%20enquiry">Individuals &mdash; join a cohort</a>
     </div>
-    <p style="font-size:.85rem;color:var(--muted);margin-top:2rem">academy@ayuceutical.in &nbsp;&middot;&nbsp; +91 82192 83100</p>
+    <p class="cta-contact"><a href="mailto:academy@ayuceutical.in">academy@ayuceutical.in</a> &nbsp;&middot;&nbsp; <a href="tel:+918219283100">+91 82192 83100</a></p>
   </div>
 </section>
 
@@ -362,11 +364,10 @@ footer a:hover{color:var(--gold)}
       <div>
         <h4>Programmes</h4>
         <ul>
-          <li><a href="/for-colleges">For colleges</a></li>
-          <li><a href="/programmes#founder-track">Founder Track cohorts</a></li>
-          <li><a href="/for-colleges/catalogue">Catalogue</a></li>
-          <li><a href="/zones">Curriculum</a></li>
-          <li><a href="/become-a-trainer">Become a trainer</a></li>
+          <li><a href="#routes">For colleges</a></li>
+          <li><a href="#routes">Mentorship cohorts</a></li>
+          <li><a href="#zones">Curriculum</a></li>
+          <li><a href="#faculty">Faculty</a></li>
         </ul>
       </div>
       <div>
@@ -374,8 +375,7 @@ footer a:hover{color:var(--gold)}
         <ul>
           <li><a href="mailto:academy@ayuceutical.in">academy@ayuceutical.in</a></li>
           <li><a href="tel:+918219283100">+91 82192 83100</a></li>
-          <li><a href="/faculty">Faculty</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="#contact">Enquire</a></li>
         </ul>
       </div>
     </div>
@@ -385,5 +385,38 @@ footer a:hover{color:var(--gold)}
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"EducationalOrganization",
+  "name":"Ayuceutical Academy",
+  "url":"https://ayuceutical.in/",
+  "email":"academy@ayuceutical.in",
+  "telephone":"+91-82192-83100",
+  "description":"Mentorship programme in Rasashastra and Ayurvedic pharmaceutics for Ayurvedic colleges, doctors and students in India.",
+  "areaServed":{"@type":"Country","name":"India"},
+  "address":{"@type":"PostalAddress","addressLocality":"Dharamshala","addressRegion":"Himachal Pradesh","addressCountry":"IN"},
+  "parentOrganization":{"@type":"Organization","name":"Ayuceutical Wellness & Academy Pvt. Ltd."},
+  "founder":[
+    {"@type":"Person","name":"Dr. Vikas Saroch","jobTitle":"MD (Ayurveda), Rasashastra"},
+    {"@type":"Person","name":"Dr. Neetika Kundailia Saroch","jobTitle":"MD (Ayurveda)"}
+  ]
+}
+</script>
 </body>
 </html>
