@@ -128,6 +128,15 @@ section{padding:6rem 0;border-bottom:1px solid var(--ink-line)}
 .stat b{display:block;font-family:var(--display);font-size:2.6rem;color:var(--gold);font-weight:500;line-height:1}
 .stat span{font-size:.82rem;color:var(--muted);letter-spacing:.06em}
 
+.mentors{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2.5rem 2rem;margin-bottom:4rem}
+.mentor h3{font-size:1.25rem;margin:1.1rem 0 .2rem}
+.mentor-cred{font-size:.8rem;color:var(--gold);letter-spacing:.04em;margin:0 0 .6rem}
+.mentor-bio{font-size:.9rem;color:#C4B995;margin:0}
+.mono{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;background:var(--ink-soft);border:1px solid var(--ink-line);font-family:var(--display);font-size:2.9rem;font-weight:500;color:var(--gold);letter-spacing:.08em}
+.mentor .shot{aspect-ratio:4/5}
+.mentor-note{font-size:.85rem;color:var(--muted);border-top:1px solid var(--ink-line);padding-top:1.6rem;margin:0 0 3.5rem}
+.mentor-note a{color:var(--gold)}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2.5rem 2rem;border-top:1px solid var(--ink-line);padding-top:2.5rem}
 .cta{background:var(--ink-soft)}
 .cta .wrap{max-width:760px;text-align:center}
 .cta h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.2rem}
@@ -183,7 +192,7 @@ footer a:hover{color:var(--gold)}
         <li><a href="#zones">Curriculum</a></li>
         <li><a href="#routes">For colleges</a></li>
         <li><a href="#routes">Programmes</a></li>
-        <li><a href="#faculty">Faculty</a></li>
+        <li><a href="#mentors">Mentors</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -298,7 +307,7 @@ footer a:hover{color:var(--gold)}
       <article class="door">
         <p class="door-tag">Route two</p>
         <h3>For doctors and students</h3>
-        <p>Join a small cohort yourself. Eight to twelve weeks of direct mentorship through all four zones, with the same faculty throughout.</p>
+        <p>Join a small cohort yourself. Eight to twelve weeks of direct mentorship through all four zones, with the same mentors throughout.</p>
         <ul>
           <li><strong>Founder track</strong> &mdash; 8&ndash;12 week cohort</li>
           <li>Small group, so questions get answered</li>
@@ -312,30 +321,61 @@ footer a:hover{color:var(--gold)}
   </div>
 </section>
 
-<section id="faculty">
-  <div class="wrap split">
-    <div>
+<section id="mentors">
+  <div class="wrap">
+    <div class="sec-head">
       <h2>Taught by people who still do the work</h2>
-      <p>The academy is led by Dr. Vikas Saroch and Dr. Neetika Kundailia Saroch, both MD (Ayurveda). Between clinical practice and technical direction of a GMP-certified manufacturing unit, the material taught here is the material used in production — which is why the sessions are demonstrations rather than lectures.</p>
+      <p>The academy is led by Dr. Vikas Saroch and Dr. Neetika Kundailia Saroch, both MD (Ayurveda), and taught by a cadre of mentors drawn from clinical practice and licensed manufacturing. Between practice and the technical direction of a GMP-certified unit, the material taught here is the material used in production — which is why the sessions are demonstrations rather than lectures.</p>
       <p>Himalayan Heal Ayurvedic Pharmacy, the unit behind the teaching, holds AYUSH manufacturing licence HP-301-Ay and operates from Kangra, Himachal Pradesh.</p>
     </div>
-    <div>
-      <div class="creds">
-        <div class="cred">
-          <h3>Dr. Vikas Saroch</h3>
-          <p>MD (Ayurveda), Rasashastra &middot; Technical Director, Himalayan Heal Ayurvedic Pharmacy</p>
-        </div>
-        <div class="cred">
-          <h3>Dr. Neetika Kundailia Saroch</h3>
-          <p>MD (Ayurveda) &middot; Co-founder</p>
-        </div>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>MD</b><span>Rasashastra specialisation</span></div>
-        <div class="stat"><b>GMP</b><span>Certified unit behind the teaching</span></div>
-        <div class="stat"><b>4</b><span>Curriculum zones</span></div>
-        <div class="stat"><b>17+</b><span>Peer-reviewed publications</span></div>
-      </div>
+
+    <div class="mentors">
+
+      <article class="mentor">
+        <div class="mono" aria-hidden="true">VS</div>
+        <h3>Dr. Vikas Saroch</h3>
+        <p class="mentor-cred">MD (Ayurveda), Rasashastra</p>
+        <p class="mentor-bio">Technical Director, Himalayan Heal Ayurvedic Pharmacy. Guides students through raw drug authentication, classical pharmaceutics and the licensing route to a GMP unit.</p>
+      </article>
+
+      <article class="mentor">
+        <div class="mono" aria-hidden="true">NS</div>
+        <h3>Dr. Neetika Kundailia Saroch</h3>
+        <p class="mentor-cred">MD (Ayurveda)</p>
+        <p class="mentor-bio">Co-founder, Ayuceutical Wellness &amp; Academy Pvt. Ltd.</p>
+      </article>
+
+      <!-- ============================================================
+           MENTOR SLOTS 3-10 — the grid holds ten.
+           To add a mentor, copy one block below, uncomment it, and fill in.
+           Photo: replace the <div class="mono"> line with
+             <span class="shot"><img src="/mentors/firstname-lastname.jpg" alt="Dr. Full Name"></span>
+           and upload that portrait to a /mentors/ folder in the repo.
+           Portraits should be 800x1000px (4:5), face centred.
+           Keep the credential line to degree + specialisation.
+           Keep the bio to two lines, using guides / trains / demonstrates /
+           prepares / supports — never treat, cure or heal.
+           NOTE: a mentor's photo and bio need their written permission on file.
+      ============================================================ -->
+
+      <!--
+      <article class="mentor">
+        <div class="mono" aria-hidden="true">AB</div>
+        <h3>Dr. Full Name</h3>
+        <p class="mentor-cred">MD (Ayurveda), Specialisation</p>
+        <p class="mentor-bio">One or two lines: where they practise, and what they teach here.</p>
+      </article>
+      -->
+
+    </div>
+
+    <p class="mentor-note">Experienced practitioners and manufacturing specialists can apply to join the mentor cadre — write to <a href="mailto:academy@ayuceutical.in?subject=Mentor%20cadre%20enquiry">academy@ayuceutical.in</a>.</p>
+
+    <div class="stats-row">
+      <div class="stat"><b>MD</b><span>Rasashastra specialisation</span></div>
+      <div class="stat"><b>GMP</b><span>Certified unit behind the teaching</span></div>
+      <div class="stat"><b>4</b><span>Curriculum zones</span></div>
+      <div class="stat"><b>17+</b><span>Peer-reviewed publications</span></div>
     </div>
   </div>
 </section>
@@ -367,7 +407,7 @@ footer a:hover{color:var(--gold)}
           <li><a href="#routes">For colleges</a></li>
           <li><a href="#routes">Founder track</a></li>
           <li><a href="#zones">Curriculum</a></li>
-          <li><a href="#faculty">Faculty</a></li>
+          <li><a href="#mentors">Mentors</a></li>
         </ul>
       </div>
       <div>
