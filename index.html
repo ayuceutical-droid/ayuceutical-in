@@ -528,58 +528,66 @@ p { margin: 0 0 1em; }
   padding: 100px var(--gutter);
   background: var(--surface);
 }
-.mentors-layout {
+/* ── Lead mentors row ── */
+.mentors-leads {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
+  gap: 32px;
   margin-top: 48px;
+  margin-bottom: 48px;
 }
-.mentors-portrait {
-  position: relative;
-}
-.mentors-portrait img {
-  width: 100%;
-  border-radius: 4px;
+/* ── Mentor card ── */
+.mentor-card {
+  background: var(--card);
   border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.3s;
 }
-.mentors-portrait-caption {
-  margin-top: 20px;
+.mentor-card:hover {
+  border-color: rgba(212,169,64,0.3);
 }
-.mentors-portrait-name {
+.mentor-card-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+.mentor-card-body {
+  padding: 20px;
+}
+.mentor-card-name {
   font-family: var(--display);
-  font-size: 28px;
+  font-size: 22px;
   color: var(--cream);
   margin-bottom: 4px;
 }
-.mentors-portrait-role {
+.mentor-card-role {
   font-family: var(--body);
   font-size: 11px; font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase;
+  letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 4px;
 }
-.mentors-portrait-loc {
+.mentor-card-loc {
   font-size: 12px;
   color: var(--text-muted);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
-.mentors-portrait-bio {
+.mentor-card-bio {
   font-size: 14px;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 1.7;
 }
-.mentor-cadre {
-  margin-top: 0;
-}
+/* ── Cadre heading ── */
 .mentor-cadre-heading {
   font-family: var(--body);
   font-size: 11px; font-weight: 600;
   letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   display: flex; align-items: center; gap: 12px;
 }
 .mentor-cadre-heading::after {
@@ -588,57 +596,19 @@ p { margin: 0 0 1em; }
   height: 1px;
   background: var(--border);
 }
-.mentor-cadre-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+/* ── Cadre grid ── */
+.mentors-cadre-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
 }
-.mentor-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
-  border: 1px solid var(--border);
-  border-bottom: none;
-  transition: background 0.3s;
-  cursor: default;
-}
-.mentor-row:last-child { border-bottom: 1px solid var(--border); }
-.mentor-row:first-child { border-radius: 4px 4px 0 0; }
-.mentor-row:last-child { border-radius: 0 0 4px 4px; }
-.mentor-row:hover { background: var(--card); }
-.mentor-row.active {
-  background: rgba(212,169,64,0.08);
-  border-color: rgba(212,169,64,0.2);
-}
-.mentor-row.active + .mentor-row { border-top-color: rgba(212,169,64,0.2); }
-.mentor-mono {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: rgba(212,169,64,0.1);
-  border: 1px solid rgba(212,169,64,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--body);
-  font-size: 11px; font-weight: 600;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.mentor-info { flex: 1; }
-.mentor-info-name {
-  font-family: var(--display);
+.mentors-cadre-grid .mentor-card-name {
   font-size: 18px;
-  color: var(--cream);
 }
-.mentor-info-role {
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.mentor-info-loc {
-  font-size: 12px;
-  color: var(--text-muted);
+.mentors-cadre-grid .mentor-card-bio {
+  font-size: 13px;
+  line-height: 1.65;
 }
 .mentor-cadre-note {
   font-size: 13px;
@@ -646,8 +616,15 @@ p { margin: 0 0 1em; }
   font-style: italic;
   margin-top: 20px;
 }
+@media (max-width: 1024px) {
+  .mentors-cadre-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 768px) {
-  .mentors-layout { grid-template-columns: 1fr; gap: 48px; }
+  .mentors-leads { grid-template-columns: 1fr; gap: 24px; }
+  .mentors-cadre-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .mentors-cadre-grid { grid-template-columns: 1fr; }
 }
 
 /* ── About text ── */
@@ -1030,73 +1007,80 @@ p { margin: 0 0 1em; }
     </div>
   </div>
 
-  <div class="mentors-layout reveal">
-    <div class="mentors-portrait">
-      <img src="mentors/vikas-saroch.jpg" alt="Dr. Vikas Saroch" loading="lazy">
-      <div class="mentors-portrait-caption">
-        <div class="mentors-portrait-name">Dr. Vikas Saroch, MD (Ayurveda)</div>
-        <div class="mentors-portrait-role">Rasashastra &amp; Pharmaceutical Manufacturing</div>
-        <div class="mentors-portrait-loc">Lead Mentor &middot; Himachal Pradesh</div>
-        <p class="mentors-portrait-bio">Co-founder of Ayuceutical&reg; and Technical Director of HHAP, AYUSH Lic. HP-301-Ay. Guides students through raw drug authentication, classical pharmaceutics and the licensing route to a GMP unit.</p>
+  <!-- Lead Mentors -->
+  <div class="mentors-leads reveal">
+    <div class="mentor-card">
+      <img class="mentor-card-img" src="mentors/vikas-saroch.jpg" alt="Dr. Vikas Saroch" loading="lazy">
+      <div class="mentor-card-body">
+        <div class="mentor-card-name">Dr. Vikas Saroch, MD (Ayurveda)</div>
+        <div class="mentor-card-role">Rasashastra &amp; Pharmaceutical Manufacturing</div>
+        <div class="mentor-card-loc">Lead Mentor &middot; Himachal Pradesh</div>
+        <p class="mentor-card-bio">Co-founder of Ayuceutical&reg; and Technical Director of HHAP, AYUSH Lic. HP-301-Ay. Guides students through raw drug authentication, classical pharmaceutics and the licensing route to a GMP unit.</p>
       </div>
     </div>
-
-    <div class="mentor-cadre">
-      <div class="mentor-cadre-heading">The Mentor Cadre &mdash; Select a Name</div>
-      <div class="mentor-cadre-list">
-        <div class="mentor-row active">
-          <div class="mentor-mono">VS</div>
-          <div class="mentor-info">
-            <div class="mentor-info-name">Dr. Vikas Saroch, MD (Ayurveda)</div>
-            <div class="mentor-info-role">Lead Mentor &middot; Himachal Pradesh</div>
-          </div>
-        </div>
-        <div class="mentor-row">
-          <div class="mentor-mono">NS</div>
-          <div class="mentor-info">
-            <div class="mentor-info-name">Dr. Neetika Saroch, MD (Ayurveda)</div>
-            <div class="mentor-info-role">Founder &middot; Himachal Pradesh</div>
-          </div>
-        </div>
-        <div class="mentor-row">
-          <div class="mentor-mono">GD</div>
-          <div class="mentor-info">
-            <div class="mentor-info-name">Dr. Gaurav Desai, MD (Ayurveda)</div>
-            <div class="mentor-info-loc">Goa</div>
-          </div>
-        </div>
-        <div class="mentor-row">
-          <div class="mentor-mono">AM</div>
-          <div class="mentor-info">
-            <div class="mentor-info-name">Dr. Amit Mane, MD (Ayurveda)</div>
-            <div class="mentor-info-loc">Maharashtra</div>
-          </div>
-        </div>
-        <div class="mentor-row">
-          <div class="mentor-mono">SS</div>
-          <div class="mentor-info">
-            <div class="mentor-info-name">Dr. Samir Sitaram, MD (Ayurveda)</div>
-            <div class="mentor-info-loc">Maharashtra</div>
-          </div>
-        </div>
-        <div class="mentor-row">
-          <div class="mentor-mono">SB</div>
-          <div class="mentor-info">
-            <div class="mentor-info-name">Dr. Santosh B, MD (Ayurveda), PhD</div>
-            <div class="mentor-info-loc">Karnataka</div>
-          </div>
-        </div>
-        <div class="mentor-row">
-          <div class="mentor-mono">RS</div>
-          <div class="mentor-info">
-            <div class="mentor-info-name">Dr. Rajesh Sharma, MD (Ayurveda)</div>
-            <div class="mentor-info-loc">Jammu &amp; Kashmir</div>
-          </div>
-        </div>
+    <div class="mentor-card">
+      <img class="mentor-card-img" src="mentors/neetika-saroch.jpg" alt="Dr. Neetika Saroch" loading="lazy">
+      <div class="mentor-card-body">
+        <div class="mentor-card-name">Dr. Neetika Saroch, MD (Ayurveda)</div>
+        <div class="mentor-card-role">Panchakarma &amp; Clinical Practice</div>
+        <div class="mentor-card-loc">Founder &middot; Himachal Pradesh</div>
+        <p class="mentor-card-bio">Founder of Ayuceutical&reg;. Guides the clinical side of the curriculum and prepares candidates to run a practice alongside a manufacturing venture.</p>
       </div>
-      <p class="mentor-cadre-note">Experienced practitioners and manufacturing specialists can apply to join the mentor cadre.</p>
     </div>
   </div>
+
+  <!-- Mentor Cadre -->
+  <div class="reveal">
+    <div class="mentor-cadre-heading">The Mentor Cadre</div>
+  </div>
+  <div class="mentors-cadre-grid reveal">
+    <div class="mentor-card">
+      <img class="mentor-card-img" src="mentors/gaurav-desai.jpg" alt="Dr. Gaurav Desai" loading="lazy">
+      <div class="mentor-card-body">
+        <div class="mentor-card-name">Dr. Gaurav Desai, MD (Ayurveda)</div>
+        <div class="mentor-card-role">Pharmaceutical Industry &amp; Product Development</div>
+        <div class="mentor-card-loc">Goa</div>
+        <p class="mentor-card-bio">Brings industry experience in new product development. Guides founders through formulation briefs, pilot batches and moving a concept into a licensed product line.</p>
+      </div>
+    </div>
+    <div class="mentor-card">
+      <img class="mentor-card-img" src="mentors/amit-mane.jpg" alt="Dr. Amit Mane" loading="lazy">
+      <div class="mentor-card-body">
+        <div class="mentor-card-name">Dr. Amit Mane, MD (Ayurveda)</div>
+        <div class="mentor-card-role">Rasashastra &amp; Bhaishajya Kalpana</div>
+        <div class="mentor-card-loc">Maharashtra</div>
+        <p class="mentor-card-bio">Over a decade of teaching and university examination duty. Trains delegates on the Make zone &mdash; classical preparation methods and scale-up into pharmacy practice.</p>
+      </div>
+    </div>
+    <div class="mentor-card">
+      <img class="mentor-card-img" src="mentors/samir-sitaram.jpg" alt="Dr. Samir Sitaram" loading="lazy">
+      <div class="mentor-card-body">
+        <div class="mentor-card-name">Dr. Samir Sitaram, MD (Ayurveda)</div>
+        <div class="mentor-card-role">Dravyaguna &amp; Raw-Material Authentication</div>
+        <div class="mentor-card-loc">Maharashtra</div>
+        <p class="mentor-card-bio">Teaching and project-guidance background in materia medica. Equips delegates on the Authenticate zone &mdash; identity, substitution and supplier evaluation of raw drugs.</p>
+      </div>
+    </div>
+    <div class="mentor-card">
+      <img class="mentor-card-img" src="mentors/santosh-b.jpg" alt="Dr. Santosh B" loading="lazy">
+      <div class="mentor-card-body">
+        <div class="mentor-card-name">Dr. Santosh B, MD (Ayurveda), PhD</div>
+        <div class="mentor-card-role">Pharmaceutics &amp; GMP Manufacturing</div>
+        <div class="mentor-card-loc">Karnataka</div>
+        <p class="mentor-card-bio">Academic and licensed-manufacturing background. Demonstrates in-process controls, batch documentation and the practical side of running a GMP unit.</p>
+      </div>
+    </div>
+    <div class="mentor-card">
+      <img class="mentor-card-img" src="mentors/rajesh-sharma.jpg" alt="Dr. Rajesh Sharma" loading="lazy">
+      <div class="mentor-card-body">
+        <div class="mentor-card-name">Dr. Rajesh Sharma, MD (Ayurveda)</div>
+        <div class="mentor-card-role">Quality Control &amp; Regulatory Affairs</div>
+        <div class="mentor-card-loc">Jammu &amp; Kashmir</div>
+        <p class="mentor-card-bio">Teaching and seminar-convening experience. Prepares candidates on the Quality &amp; Law zone &mdash; testing protocols, licensing files and regulatory documentation.</p>
+      </div>
+    </div>
+  </div>
+  <p class="mentor-cadre-note reveal">Experienced practitioners and manufacturing specialists can apply to join the mentor cadre.</p>
 </section>
 
 <!-- Stats Row -->
@@ -1222,50 +1206,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   });
 })();
 
-// ── Mentor row click to swap portrait ──
-(function() {
-  var rows = document.querySelectorAll('.mentor-row');
-  var portrait = document.querySelector('.mentors-portrait img');
-  var pName = document.querySelector('.mentors-portrait-name');
-  var pRole = document.querySelector('.mentors-portrait-role');
-  var pLoc = document.querySelector('.mentors-portrait-loc');
-  var pBio = document.querySelector('.mentors-portrait-bio');
-  if (!rows.length || !portrait) return;
-
-  var mentorData = {
-    'VS': {
-      img: 'mentors/vikas-saroch.jpg',
-      name: 'Dr. Vikas Saroch, MD (Ayurveda)',
-      role: 'Rasashastra & Pharmaceutical Manufacturing',
-      loc: 'Lead Mentor · Himachal Pradesh',
-      bio: 'Co-founder of Ayuceutical® and Technical Director of HHAP, AYUSH Lic. HP-301-Ay. Guides students through raw drug authentication, classical pharmaceutics and the licensing route to a GMP unit.'
-    },
-    'NS': {
-      img: 'mentors/neetika-saroch.jpg',
-      name: 'Dr. Neetika Saroch, MD (Ayurveda)',
-      role: 'Kayachikitsa & Clinical Practice',
-      loc: 'Founder · Himachal Pradesh',
-      bio: 'Co-founder of Ayuceutical®. Specialist in Kayachikitsa with clinical and academic expertise spanning chronic care and Panchakarma.'
-    }
-  };
-
-  rows.forEach(function(row) {
-    row.addEventListener('click', function() {
-      rows.forEach(function(r) { r.classList.remove('active'); });
-      row.classList.add('active');
-      var code = row.querySelector('.mentor-mono').textContent.trim();
-      var data = mentorData[code];
-      if (data) {
-        portrait.src = data.img;
-        portrait.alt = data.name;
-        pName.textContent = data.name;
-        pRole.textContent = data.role;
-        pLoc.textContent = data.loc;
-        pBio.textContent = data.bio;
-      }
-    });
-  });
-})();
 </script>
 </body>
 </html>
