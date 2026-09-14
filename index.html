@@ -421,11 +421,26 @@ p { margin: 0 0 1em; }
   transform: translateY(-4px);
   box-shadow: 0 16px 48px rgba(0,0,0,0.4);
 }
-.zone-card-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1F1A14, #0D0A05); }
-.zone-card:nth-child(1) .zone-card-bg { background: linear-gradient(135deg, #2A2015 0%, #1A1208 100%); }
-.zone-card:nth-child(2) .zone-card-bg { background: linear-gradient(135deg, #201A12 0%, #100D08 100%); }
-.zone-card:nth-child(3) .zone-card-bg { background: linear-gradient(135deg, #1A1812 0%, #0D0B06 100%); }
-.zone-card:nth-child(4) .zone-card-bg { background: linear-gradient(135deg, #1D1510 0%, #0F0B08 100%); }
+.zone-card-bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  transition: opacity 0.5s var(--ease);
+  z-index: 1;
+}
+.zone-card.active .zone-card-bg { opacity: 0.5; }
+.zone-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #1F1A14, #0D0A05);
+  z-index: 0;
+}
+.zone-card:nth-child(1) .zone-card-bg { background-image: url('zones/zone-01-authenticate.jpg'); }
+.zone-card:nth-child(2) .zone-card-bg { background-image: url('zones/zone-02-make.jpg'); }
+.zone-card:nth-child(3) .zone-card-bg { background-image: url('zones/zone-03-licence.jpg'); }
+.zone-card:nth-child(4) .zone-card-bg { background-image: url('zones/zone-04-quality.jpg'); }
 .zone-card-content {
   position: relative;
   z-index: 1;
