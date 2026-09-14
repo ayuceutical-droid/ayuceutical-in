@@ -1,492 +1,1208 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ayuceutical Academy | Ayurvedic Pharma-Tech Mentorship in India</title>
-<meta name="description" content="Rasashastra and Ayurvedic pharma-tech mentorship in India. Campus workshops for colleges and small-cohort mentorship for doctors and students. Four zones, four certification levels, taught by MD specialists.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#0A0805">
-<link rel="canonical" href="https://ayuceutical.in/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0805'/><text x='16' y='24' font-family='Georgia,serif' font-size='22' fill='%23D4A940' text-anchor='middle'>A</text></svg>">
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_IN">
-<meta property="og:site_name" content="Ayuceutical Academy">
-<meta property="og:url" content="https://ayuceutical.in/">
-<meta property="og:title" content="Ayuceutical Academy | Ayurvedic Pharma-Tech Mentorship in India">
-<meta property="og:description" content="Campus workshops for Ayurvedic colleges and small-cohort mentorship for doctors and students. Four zones, four certification levels, taught by MD specialists.">
-<meta property="og:image" content="https://ayuceutical.in/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ayuceutical Academy | Ayurvedic Pharma-Tech Mentorship in India">
-<meta name="twitter:description" content="Campus workshops for Ayurvedic colleges and small-cohort mentorship for doctors and students.">
-<meta name="twitter:image" content="https://ayuceutical.in/og.png">
-
+<title>Ayuceutical Academy — Ayurvedic Pharma-Tech Mentorship</title>
+<meta name="description" content="India's pharma-tech mentorship academy for Ayurvedic doctors — from raw drug authentication to GMP manufacturing. Delivered across India, on campus and online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --ink:#0A0805;
-  --ink-soft:#151109;
-  --ink-line:#2A2317;
-  --gold:#D4A940;
-  --cream:#F5E6B0;
-  --paper:#FBF7EC;
-  --muted:#A99C7E;
-  --tamra:#A85832;
-  --kansya:#8C6B3F;
-  --rajata:#9BA2A8;
-  --swarna:#D4A940;
-  --display:"Cormorant Garamond",Georgia,serif;
-  --body:"Josefin Sans",system-ui,sans-serif;
-  --measure:62ch;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;margin:0}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{width:min(1140px,92vw);margin:0 auto}
-.skip{position:absolute;left:-9999px}
-.skip:focus{left:1rem;top:1rem;position:fixed;background:var(--gold);color:var(--ink);padding:.6rem 1rem;z-index:99}
+  :root {
+    --ground: #0A0805;
+    --surface: #131010;
+    --card: #1A1612;
+    --border: #2A231B;
+    --gold: #D4A940;
+    --gold-dim: #A8862F;
+    --gold-bright: #E8C45A;
+    --cream: #F5E6B0;
+    --text: #F5E6B0;
+    --text-muted: #9A8B6F;
+    --text-body: #C4B48E;
+    --display: 'Cormorant Garamond', 'Georgia', serif;
+    --body: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --gutter: max(16px, 5vw);
+  }
+  body {
+    background: var(--ground);
+    color: var(--text-body);
+    font-family: var(--body);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
+  a:hover { color: var(--gold-bright); }
+  h1, h2, h3, h4 { font-family: var(--display); color: var(--cream); margin: 0; font-weight: 600; text-wrap: balance; }
+  p { margin: 0 0 1em; }
 
-header{position:sticky;top:0;z-index:20;background:rgba(10,8,5,.94);border-bottom:1px solid var(--ink-line);backdrop-filter:blur(8px)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.1rem 0}
-.brand{font-family:var(--display);font-size:1.5rem;letter-spacing:.01em;text-decoration:none;color:var(--cream)}
-.brand span{color:var(--gold)}
-nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0;font-size:.9rem;letter-spacing:.04em}
-nav a{text-decoration:none;color:var(--muted);padding-bottom:2px;border-bottom:1px solid transparent}
-nav a:hover{color:var(--cream);border-bottom-color:var(--gold)}
-.btn{display:inline-block;font-family:var(--body);font-size:.9rem;letter-spacing:.06em;padding:.85rem 1.6rem;text-decoration:none;border:1px solid var(--gold);color:var(--gold);background:transparent}
-.btn:hover{background:var(--gold);color:var(--ink)}
-.btn-solid{background:var(--gold);color:var(--ink);font-weight:500}
-.btn-solid:hover{background:var(--cream);border-color:var(--cream)}
-.menu-btn{display:none;background:none;border:1px solid var(--ink-line);color:var(--cream);padding:.55rem .9rem;font-family:var(--body);font-size:.85rem;letter-spacing:.06em;cursor:pointer}
+  /* ── Nav ── */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px var(--gutter);
+    background: rgba(10, 8, 5, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 169, 64, 0.08);
+    transition: background 0.4s;
+  }
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 22px; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .nav-logo sup {
+    font-size: 10px;
+    color: var(--gold-dim);
+    vertical-align: super;
+    margin-left: 2px;
+  }
+  .nav-logo span { color: var(--cream); font-weight: 400; }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none; margin: 0; padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--body);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.4s var(--ease);
+  }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    font-family: var(--body);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 10px 24px;
+    background: var(--gold);
+    color: var(--ground);
+    border: none; border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+  }
+  .nav-cta:hover { background: var(--gold-bright); transform: translateY(-1px); color: var(--ground); }
+  /* Mobile menu */
+  .nav-toggle {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    width: 32px; height: 24px;
+    position: relative;
+  }
+  .nav-toggle span {
+    display: block; width: 100%; height: 2px;
+    background: var(--cream);
+    position: absolute; left: 0;
+    transition: all 0.3s;
+  }
+  .nav-toggle span:nth-child(1) { top: 0; }
+  .nav-toggle span:nth-child(2) { top: 11px; }
+  .nav-toggle span:nth-child(3) { top: 22px; }
 
-.hero{padding:7rem 0 5rem;border-bottom:1px solid var(--ink-line)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:5rem;align-items:start}
-figure{margin:0}
-/* image slots retained for when photography is ready */
-.shot{position:relative;display:block;width:100%;background:var(--ink-soft);border:1px solid var(--ink-line);overflow:hidden}
-.shot img{display:block;width:100%;height:100%;object-fit:cover}
-.r-wide{aspect-ratio:16/9}
-.r-tall{aspect-ratio:4/5}
-.caption{font-size:.78rem;color:var(--muted);letter-spacing:.04em;margin:.7rem 0 0}
-.kicker{font-size:.8rem;letter-spacing:.22em;color:var(--muted);margin:0 0 2rem;font-weight:400}
-.hero h1{font-size:clamp(2.7rem,5.6vw,4.5rem);margin-bottom:1.8rem}
-.hero p{max-width:var(--measure);color:#D8CCAC;margin:0 0 2.6rem}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.hero-note{margin-top:2.4rem;font-size:.85rem;color:var(--muted);letter-spacing:.03em}
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+    .nav-logo { font-size: 18px; }
+    .nav.menu-open .nav-links {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(10,8,5,0.97);
+      padding: 24px var(--gutter);
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav.menu-open .nav-cta {
+      display: inline-block;
+      position: absolute; top: calc(100% + 140px); left: var(--gutter);
+      /* adjust if more links */
+    }
+  }
 
-.ladder{border:1px solid var(--ink-line);padding:2rem 1.8rem;background:var(--ink-soft)}
-.ladder h2{font-size:1.35rem;margin-bottom:.4rem}
-.ladder>p{font-size:.85rem;color:var(--muted);margin:0 0 1.8rem}
-.rung{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;padding:.9rem 0;border-top:1px solid var(--ink-line)}
-.rung:first-of-type{border-top:none}
-.dot{width:11px;height:11px;border-radius:50%;align-self:center}
-.rung-name{font-family:var(--display);font-size:1.3rem}
-.rung-meta{font-size:.78rem;color:var(--muted);letter-spacing:.05em;display:block;margin-top:.1rem}
+  /* ── Section ── */
+  .section {
+    padding: 100px var(--gutter);
+    position: relative;
+  }
+  .section-label {
+    font-family: var(--body);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .section-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.8;
+  }
 
-section{padding:6rem 0;border-bottom:1px solid var(--ink-line)}
-.sec-head{max-width:var(--measure);margin-bottom:3.5rem}
-.sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:1rem}
-.sec-head p{color:#C4B995;margin:0}
+  /* ── Hero ── */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px var(--gutter) 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-canvas {
+    position: absolute; inset: 0;
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, transparent 0%, var(--ground) 70%);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 800px;
+  }
+  .hero-eyebrow {
+    font-family: var(--body);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 1s 0.3s var(--ease) forwards;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 7vw, 72px);
+    line-height: 1.08;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 1s 0.5s var(--ease) forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .hero-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto 48px;
+    line-height: 1.9;
+    opacity: 0;
+    animation: fadeUp 1s 0.7s var(--ease) forwards;
+  }
+  .hero-actions {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s 0.9s var(--ease) forwards;
+  }
+  .hero-footer-line {
+    position: relative; z-index: 2;
+    margin-top: 56px;
+    font-family: var(--body);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0;
+    animation: fadeUp 1s 1.1s var(--ease) forwards;
+  }
 
-.zones{display:grid;gap:0}
-.zone{display:grid;grid-template-columns:5rem 1fr 1fr;gap:2.5rem;padding:2.4rem 0;border-top:1px solid var(--ink-line);align-items:start}
-.zone-num{font-family:var(--display);font-size:2.6rem;color:var(--gold);line-height:1}
-.zone h3{font-size:1.6rem;margin-bottom:.5rem}
-.zone-lead{color:var(--muted);font-size:.85rem;letter-spacing:.08em;margin:0}
-.zone p{margin:0;color:#C4B995;font-size:.97rem}
+  .btn-primary {
+    font-family: var(--body);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 16px 40px;
+    background: var(--gold);
+    color: var(--ground);
+    border: none; border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.4s var(--ease);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+  .btn-primary:hover::before { transform: translateX(100%); }
+  .btn-primary:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(212,169,64,0.3); color: var(--ground); }
+  .btn-outline {
+    font-family: var(--body);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 16px 40px;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.4s var(--ease);
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-.fork{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ink-line)}
-.door{padding:3rem 2.5rem;display:flex;flex-direction:column}
-.door+.door{border-left:1px solid var(--ink-line);background:var(--ink-soft)}
-.door-tag{font-size:.72rem;letter-spacing:.18em;color:var(--gold);margin:0 0 1.4rem}
-.door h3{font-size:1.9rem;margin-bottom:.8rem}
-.door>p{color:#C4B995;font-size:.97rem;margin:0 0 1.6rem}
-.door ul{list-style:none;margin:0 0 2rem;padding:0;flex:1;font-size:.92rem;color:#C4B995}
-.door li{padding:.55rem 0;border-top:1px solid var(--ink-line)}
-.door li:first-child{border-top:none}
-.door .who{font-size:.8rem;color:var(--muted);letter-spacing:.04em;margin:1.2rem 0 0}
-.door .btn{align-self:flex-start}
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: var(--text-muted);
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    animation: float 3s ease-in-out infinite;
+  }
+  .hero-scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.split h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:1.2rem}
-.split p{color:#C4B995}
-.creds{display:grid;gap:0;border:1px solid var(--ink-line);margin-bottom:2.5rem}
-.cred{padding:1.5rem 1.6rem;border-top:1px solid var(--ink-line)}
-.cred:first-child{border-top:none}
-.cred h3{font-size:1.35rem;margin-bottom:.2rem}
-.cred p{font-size:.85rem;color:var(--muted);margin:0}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 2rem}
-.stat b{display:block;font-family:var(--display);font-size:2.6rem;color:var(--gold);font-weight:500;line-height:1}
-.stat span{font-size:.82rem;color:var(--muted);letter-spacing:.06em}
+  /* ── Credential Bar ── */
+  .credential-bar {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 20px var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .credential-bar span {
+    font-family: var(--body);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .credential-dot {
+    width: 4px; height: 4px;
+    background: var(--gold-dim);
+    border-radius: 50%;
+    display: inline-block;
+  }
 
-.mentors{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2.5rem 2rem;margin-bottom:4rem}
-.mentor h3{font-size:1.25rem;margin:1.1rem 0 .2rem}
-.mentor-cred{font-size:.8rem;color:var(--gold);letter-spacing:.04em;margin:0 0 .6rem}
-.mentor-bio{font-size:.9rem;color:#C4B995;margin:0}
-.mono{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;background:var(--ink-soft);border:1px solid var(--ink-line);font-family:var(--display);font-size:2.9rem;font-weight:500;color:var(--gold);letter-spacing:.08em}
-.mentor .shot{aspect-ratio:4/5}
-.mentor-note{font-size:.85rem;color:var(--muted);border-top:1px solid var(--ink-line);padding-top:1.6rem;margin:0 0 3.5rem}
-.mentor-note a{color:var(--gold)}
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2.5rem 2rem;border-top:1px solid var(--ink-line);padding-top:2.5rem}
-.cta{background:var(--ink-soft)}
-.cta .wrap{max-width:760px;text-align:center}
-.cta h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:1.2rem}
-.cta p{color:#C4B995;margin:0 auto 2.5rem;max-width:52ch}
-.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.cta-contact{font-size:.85rem;color:var(--muted);margin-top:2rem}
-.cta-contact a{text-decoration:none}
-.cta-contact a:hover{color:var(--gold)}
+  /* ── "Taught by" Section ── */
+  .taught-section {
+    padding: 100px var(--gutter);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .taught-content .section-label { margin-bottom: 16px; }
+  .taught-content h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.12;
+    margin-bottom: 28px;
+  }
+  .taught-content p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 480px;
+  }
+  .taught-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .taught-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.4s var(--ease);
+  }
+  .taught-card:hover {
+    border-color: rgba(212,169,64,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .taught-card-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--gold);
+  }
+  .taught-card-title {
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .taught-card-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    .taught-section {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
 
-footer{padding:4rem 0 2.5rem;font-size:.88rem;color:var(--muted)}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-footer h4{font-family:var(--body);font-size:.75rem;letter-spacing:.16em;color:var(--cream);margin:0 0 1rem;font-weight:500}
-footer ul{list-style:none;margin:0;padding:0;line-height:2.1}
-footer a{text-decoration:none}
-footer a:hover{color:var(--gold)}
-.legal{border-top:1px solid var(--ink-line);padding-top:1.8rem;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;font-size:.8rem}
+  /* ── Curriculum Gallery ── */
+  .curriculum-section {
+    padding: 100px var(--gutter);
+    background: var(--surface);
+  }
+  .curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 64px;
+  }
+  .curriculum-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.5s var(--ease);
+    cursor: default;
+  }
+  .curriculum-card:hover {
+    border-color: rgba(212,169,64,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .curriculum-card-img {
+    height: 180px;
+    background: linear-gradient(135deg, var(--card), #1F1A14);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .curriculum-card-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(26,22,18,0.6));
+  }
+  .curriculum-card-icon {
+    font-size: 36px;
+    color: rgba(212,169,64,0.2);
+    z-index: 1;
+  }
+  .curriculum-card-body {
+    padding: 20px;
+  }
+  .curriculum-card-body h4 {
+    font-family: var(--display);
+    font-size: 18px;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .curriculum-card-body p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .curriculum-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .curriculum-grid { grid-template-columns: 1fr; }
+  }
 
-@media(max-width:900px){
-  .bar{position:relative}
-  nav{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);width:100vw;background:var(--ink);border-top:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line);padding:.5rem 0}
-  nav.open{display:block}
-  nav ul{flex-direction:column;gap:0;width:min(1140px,92vw);margin:0 auto;font-size:1rem}
-  nav li{border-top:1px solid var(--ink-line)}
-  nav li:first-child{border-top:none}
-  nav a{display:block;padding:.95rem 0;border-bottom:none}
-  .menu-btn{display:block;order:3}
-  .bar .btn-solid{order:2}
-  .hero-grid,.split{grid-template-columns:1fr;gap:3rem}
-  .zone{grid-template-columns:3rem 1fr;gap:1.2rem}
-  .zone p{grid-column:2}
-  .fork{grid-template-columns:1fr}
-  .door+.door{border-left:none;border-top:1px solid var(--ink-line)}
-  .door{padding:2.2rem 1.6rem}
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .hero{padding:4rem 0 3.5rem}
-  section{padding:4rem 0}
-}
-@media(max-width:600px){
-  .bar .btn-solid{display:none}
-  .foot-grid{grid-template-columns:1fr;gap:2rem}
-  .legal{flex-direction:column;gap:.6rem}
-}
+  /* ── Certification Ladder ── */
+  .ladder-section {
+    padding: 100px var(--gutter);
+  }
+  .ladder {
+    margin-top: 48px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .ladder-step {
+    flex: 1;
+    padding: 40px 24px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    transition: background 0.4s;
+    position: relative;
+  }
+  .ladder-step:last-child { border-right: none; }
+  .ladder-step:hover { background: var(--card); }
+  .ladder-metal {
+    font-family: var(--display);
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .ladder-metal.tamra { color: #B87333; }
+  .ladder-metal.kansya { color: #CD7F32; }
+  .ladder-metal.rajata { color: #C0C0C0; }
+  .ladder-metal.swarna { color: var(--gold); }
+  .ladder-zones {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .ladder-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    opacity: 0.7;
+  }
+  @media (max-width: 600px) {
+    .ladder { flex-direction: column; }
+    .ladder-step { border-right: none; border-bottom: 1px solid var(--border); }
+    .ladder-step:last-child { border-bottom: none; }
+  }
+
+  /* ── Two Ways In ── */
+  .routes-section {
+    padding: 100px var(--gutter);
+    background: var(--surface);
+  }
+  .routes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 64px;
+  }
+  .route-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 48px 40px;
+    transition: all 0.5s var(--ease);
+    display: flex; flex-direction: column;
+  }
+  .route-card:hover {
+    border-color: rgba(212,169,64,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .route-label {
+    font-family: var(--body);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .route-name {
+    font-family: var(--display);
+    font-size: clamp(28px, 4vw, 36px);
+    color: var(--cream);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .route-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    flex: 1;
+    margin-bottom: 24px;
+  }
+  .route-features {
+    list-style: none; padding: 0; margin: 0 0 28px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .route-features li {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 6px 0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .route-features li::before {
+    content: '◆';
+    font-size: 6px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .route-cta {
+    align-self: flex-start;
+  }
+  @media (max-width: 768px) {
+    .routes-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Mentors ── */
+  .mentors-scroll {
+    display: flex;
+    gap: 20px;
+    margin-top: 64px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mentors-scroll::-webkit-scrollbar { height: 4px; }
+  .mentors-scroll::-webkit-scrollbar-track { background: var(--card); border-radius: 2px; }
+  .mentors-scroll::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+  .mentor-card {
+    min-width: 220px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    text-align: center;
+    transition: transform 0.4s var(--ease);
+  }
+  .mentor-card:hover { transform: translateY(-4px); }
+  .mentor-photo {
+    width: 220px; height: 275px;
+    background: linear-gradient(135deg, var(--card), #1F1A14);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    transition: border-color 0.4s;
+  }
+  .mentor-card:hover .mentor-photo { border-color: rgba(212,169,64,0.4); }
+  .mentor-monogram {
+    font-family: var(--display);
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(212,169,64,0.15);
+  }
+  .mentor-badge {
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    background: var(--gold);
+    color: var(--ground);
+    padding: 3px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .mentor-name {
+    font-family: var(--display);
+    font-size: 18px;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .mentor-role {
+    font-size: 12px;
+    color: var(--gold);
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  .mentor-region {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CTA banner ── */
+  .cta-banner {
+    text-align: center;
+    padding: 120px var(--gutter);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(212,169,64,0.06) 0%, transparent 70%);
+  }
+  .cta-banner h2 {
+    font-size: clamp(28px, 5vw, 48px);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .cta-banner p {
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    position: relative;
+  }
+  .cta-actions {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    position: relative;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 64px var(--gutter) 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+  .footer-brand {
+    font-family: var(--display);
+    font-size: 20px; font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .footer-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 320px;
+  }
+  .footer-heading {
+    font-family: var(--body);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+  .footer-links {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .footer-links a, .footer-links span {
+    font-size: 13px;
+    color: var(--text-muted);
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    font-size: 12px; color: var(--text-muted);
+  }
+  @media (max-width: 768px) {
+    .footer { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 500px) {
+    .footer { grid-template-columns: 1fr; }
+  }
+
+  /* ── WhatsApp float ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    z-index: 99;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s;
+    color: #fff;
+    font-size: 28px;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+  .whatsapp-float::after {
+    content: '';
+    position: absolute; inset: -6px;
+    border: 2px solid rgba(37, 211, 102, 0.3);
+    border-radius: 50%;
+    animation: waPulse 2s ease-in-out infinite;
+  }
+
+  /* ── Scroll reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  }
+  .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+  .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+  .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
+  .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.2s; }
+  .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
+  .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.3s; }
+  .reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+  }
+  @keyframes waPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0; }
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+    .reveal-stagger > * { opacity: 1; transform: none; }
+  }
+
+  /* ── Grain overlay ── */
+  .grain {
+    position: fixed; inset: 0; z-index: 200;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <div class="wrap bar">
-    <a class="brand" href="/">Ayuceutical <span>Academy</span></a>
-    <nav id="nav" aria-label="Primary">
-      <ul>
-        <li><a href="#zones">Curriculum</a></li>
-        <li><a href="#routes">For colleges</a></li>
-        <li><a href="#routes">Programmes</a></li>
-        <li><a href="#mentors">Mentors</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-solid" href="#routes">Get started</a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-  </div>
-</header>
+<!-- Grain overlay -->
+<div class="grain" aria-hidden="true"></div>
 
-<main id="main">
+<!-- Navigation -->
+<nav class="nav" id="mainNav">
+  <div class="nav-logo">Ayuceutical<sup>&reg;</sup> <span>Academy</span></div>
+  <ul class="nav-links">
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#programmes">Programmes</a></li>
+    <li><a href="#mentors">Mentors</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Started</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<div class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="kicker">Ayurvedic pharma-tech mentorship &middot; India</p>
-      <h1>You can recite the classics. Can you make the medicine?</h1>
-      <p>Ayuceutical Academy is a mentorship programme in Rasashastra and Ayurvedic pharmaceutics — authentication, preparation, licensing and quality law. Taught by MD specialists who run a GMP-certified manufacturing unit, so what you learn is what production actually requires.</p>
-      <p>Colleges bring it to campus for a full batch. Individual doctors and students join a cohort directly.</p>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="#routes">Find your route</a>
-        <a class="btn" href="#zones">See the curriculum</a>
-      </div>
-      <p class="hero-note">Delivered across India, on campus and online.</p>
+<!-- Hero -->
+<section class="hero">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Ayurvedic Pharma-Tech Mentorship &middot; India</div>
+    <h1>You can recite the classics.<br><em>Can you make the medicine?</em></h1>
+    <p class="hero-desc">A mentorship programme taught by MD specialists who run a GMP-certified manufacturing unit. From raw drug authentication and classical formulation to AYUSH licensing and batch dispatch.</p>
+    <div class="hero-actions">
+      <a href="#programmes" class="btn-primary">Find Your Route</a>
+      <a href="#curriculum" class="btn-outline">See the Curriculum</a>
     </div>
-
-    <aside class="ladder" aria-labelledby="ladder-h">
-      <h2 id="ladder-h">The certification ladder</h2>
-      <p>Named for the metals of Rasashastra. Each zone completed moves a student one rung.</p>
-      <div class="rung">
-        <span class="dot" style="background:var(--tamra)" aria-hidden="true"></span>
-        <span><span class="rung-name">Tamra</span><span class="rung-meta">Copper — one zone</span></span>
-      </div>
-      <div class="rung">
-        <span class="dot" style="background:var(--kansya)" aria-hidden="true"></span>
-        <span><span class="rung-name">Kansya</span><span class="rung-meta">Bronze — two zones</span></span>
-      </div>
-      <div class="rung">
-        <span class="dot" style="background:var(--rajata)" aria-hidden="true"></span>
-        <span><span class="rung-name">Rajata</span><span class="rung-meta">Silver — three zones</span></span>
-      </div>
-      <div class="rung">
-        <span class="dot" style="background:var(--swarna)" aria-hidden="true"></span>
-        <span><span class="rung-name">Swarna</span><span class="rung-meta">Gold — all four, with certificate of completion</span></span>
-      </div>
-    </aside>
   </div>
+  <div class="hero-footer-line">Delivered across India &middot; On campus and online</div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- Credential Bar -->
+<div class="credential-bar reveal">
+  <span>AYUSH Lic. HP-301-Ay</span>
+  <span class="credential-dot"></span>
+  <span>Kangra, Himachal Pradesh</span>
+  <span class="credential-dot"></span>
+  <span>GMP Certified</span>
 </div>
 
-<section id="zones">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Four zones, taught in sequence</h2>
-      <p>Each zone is a working session with materials in hand. Students authenticate, prepare, document and defend — in that order, because that is the order the work happens in.</p>
+<!-- Taught By Section -->
+<section class="taught-section">
+  <div class="taught-content reveal">
+    <div class="section-label">Why Us</div>
+    <h2>Taught by people who still <em style="color:var(--gold);font-weight:400;">do the work</em></h2>
+    <p>Taught by MD specialists who run a GMP-certified manufacturing unit — not by textbook instructors, but by doctors who still authenticate raw drugs, fire Puta furnaces, and sign batch records every week.</p>
+    <p>HHAP (Himalayan Heal Ayurvedic Pharmacy) is where the training happens. Same facility, same team, same protocols.</p>
+  </div>
+  <div class="taught-visual reveal-stagger">
+    <div class="taught-card">
+      <div class="taught-card-icon">&#9670;</div>
+      <div class="taught-card-title">Raw Drug Identity</div>
+      <div class="taught-card-desc">Organoleptic checks, Grahya-Agrahya Lakshana, pharmacognosy protocols</div>
     </div>
-    <div class="zones">
-      <article class="zone">
-        <div class="zone-num">01</div>
-        <div>
-          <h3>Authenticate</h3>
-          <p class="zone-lead">Raw drug identity</p>
-        </div>
-        <p>Organoleptic and physical identification of herbs, minerals and metals. What adulteration looks like in a real consignment, and how a purchase decision is defended on paper.</p>
-      </article>
-      <article class="zone">
-        <div class="zone-num">02</div>
-        <div>
-          <h3>Make</h3>
-          <p class="zone-lead">Classical pharmaceutics</p>
-        </div>
-        <p>Shodhana, marana and the classical dosage forms, demonstrated end to end. Students handle the apparatus and record the process the way a production file requires.</p>
-      </article>
-      <article class="zone">
-        <div class="zone-num">03</div>
-        <div>
-          <h3>Licence to launch</h3>
-          <p class="zone-lead">Setting up lawfully</p>
-        </div>
-        <p>What an AYUSH manufacturing licence actually requires, what GMP inspection looks for, and the sequence a graduate follows to go from intention to a licensed unit.</p>
-      </article>
-      <article class="zone">
-        <div class="zone-num">04</div>
-        <div>
-          <h3>Quality and law</h3>
-          <p class="zone-lead">Testing and compliance</p>
-        </div>
-        <p>Drug Testing Laboratory protocols, specification writing, and the advertising and labelling rules that govern every Ayurvedic product sold in India.</p>
-      </article>
+    <div class="taught-card">
+      <div class="taught-card-icon">&#9672;</div>
+      <div class="taught-card-title">Classical Manufacture</div>
+      <div class="taught-card-desc">Shodhana, Marana, Khalva Yantra, Puta furnace, Valuka Yantra</div>
+    </div>
+    <div class="taught-card">
+      <div class="taught-card-icon">&#9673;</div>
+      <div class="taught-card-title">Licence &amp; GMP</div>
+      <div class="taught-card-desc">AYUSH licence, GMP certification, FSSAI, COPP documentation</div>
+    </div>
+    <div class="taught-card">
+      <div class="taught-card-icon">&#10023;</div>
+      <div class="taught-card-title">Quality &amp; Compliance</div>
+      <div class="taught-card-desc">Batch documentation, stability testing, D&amp;C Act compliance</div>
     </div>
   </div>
 </section>
 
-<section id="routes">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Two ways in</h2>
-      <p>The curriculum is the same either way. What differs is who arranges it, how long you spend, and how close the guidance gets.</p>
-    </div>
-    <div class="fork">
-
-      <article class="door">
-        <p class="door-tag">Route one</p>
-        <h3>For colleges</h3>
-        <p>We come to your campus and teach a full batch. Arranged through the entrepreneurship cell, paid for by the institution.</p>
-        <ul>
-          <li><strong>Campus seminar</strong> &mdash; 2 hours, whole batch</li>
-          <li><strong>Pharma-tech workshop</strong> &mdash; 1&ndash;2 days, hands-on</li>
-          <li><strong>Industry partnership</strong> &mdash; discussed case by case</li>
-        </ul>
-        <a class="btn btn-solid" href="#contact">Request a proposal</a>
-        <p class="who">For principals and RIEDC coordinators. Institutional fee; students pay nothing.</p>
-      </article>
-
-      <article class="door">
-        <p class="door-tag">Route two</p>
-        <h3>For doctors and students</h3>
-        <p>Join a small cohort yourself. Eight to twelve weeks of direct mentorship through all four zones, with the same mentors throughout.</p>
-        <ul>
-          <li><strong>Founder track</strong> &mdash; 8&ndash;12 week cohort</li>
-          <li>Small group, so questions get answered</li>
-          <li>Ends at Swarna, the full certification rung</li>
-        </ul>
-        <a class="btn btn-solid" href="#contact">Join the next cohort</a>
-        <p class="who">For BAMS and MD students, and practising doctors preparing to start a unit.</p>
-      </article>
-
-    </div>
+<!-- Curriculum Gallery -->
+<section class="curriculum-section" id="curriculum">
+  <div class="reveal">
+    <div class="section-label">Curriculum</div>
+    <h2 class="section-title">Four Zones of Mastery</h2>
+    <p class="section-subtitle">Each zone builds a specific competence. Authenticate raw materials, manufacture classical formulations, navigate licensing, and ensure quality compliance.</p>
   </div>
-</section>
-
-<section id="mentors">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2>Taught by people who still do the work</h2>
-      <p>The academy is led by Dr. Vikas Saroch and Dr. Neetika Saroch, both MD (Ayurveda), and taught by a cadre of mentors drawn from clinical practice and licensed manufacturing. Between practice and the technical direction of a GMP-certified unit, the material taught here is the material used in production — which is why the sessions are demonstrations rather than lectures.</p>
-      <p>Himalayan Heal Ayurvedic Pharmacy, the unit behind the teaching, holds AYUSH manufacturing licence HP-301-Ay and operates from Kangra, Himachal Pradesh.</p>
-    </div>
-
-    <div class="mentors">
-
-      <article class="mentor">
-        <span class="shot"><img src="/mentors/vikas-saroch.jpg" alt="Dr. Vikas Saroch" width="800" height="1000" loading="lazy"></span>
-        <h3>Dr. Vikas Saroch</h3>
-        <p class="mentor-cred">MD (Ayurveda), Rasashastra</p>
-        <p class="mentor-bio">Technical Director, Himalayan Heal Ayurvedic Pharmacy. Guides students through raw drug authentication, classical pharmaceutics and the licensing route to a GMP unit.</p>
-      </article>
-
-      <article class="mentor">
-        <span class="shot"><img src="/mentors/neetika-saroch.jpg" alt="Dr. Neetika Saroch" width="800" height="1000" loading="lazy"></span>
-        <h3>Dr. Neetika Saroch</h3>
-        <p class="mentor-cred">MD (Ayurveda)</p>
-        <p class="mentor-bio">Co-founder, Ayuceutical Wellness &amp; Academy Pvt. Ltd.</p>
-      </article>
-
-      <article class="mentor">
-        <div class="mono" aria-hidden="true">AM</div>
-        <h3>Dr. Amit Mane</h3>
-        <p class="mentor-cred">MD (Ayurveda) &middot; Maharashtra</p>
-      </article>
-
-      <article class="mentor">
-        <div class="mono" aria-hidden="true">GD</div>
-        <h3>Dr. Gaurav Desai</h3>
-        <p class="mentor-cred">MD (Ayurveda) &middot; Goa</p>
-      </article>
-
-      <article class="mentor">
-        <div class="mono" aria-hidden="true">SS</div>
-        <h3>Dr. Samir Sitaram</h3>
-        <p class="mentor-cred">MD (Ayurveda) &middot; Maharashtra</p>
-      </article>
-
-      <article class="mentor">
-        <div class="mono" aria-hidden="true">SB</div>
-        <h3>Dr. Santosh B</h3>
-        <p class="mentor-cred">MD (Ayurveda) &middot; Karnataka</p>
-      </article>
-
-      <article class="mentor">
-        <div class="mono" aria-hidden="true">RS</div>
-        <h3>Dr. Rajesh Sharma</h3>
-        <p class="mentor-cred">MD (Ayurveda) &middot; Jammu &amp; Kashmir</p>
-      </article>
-
-      <!-- ============================================================
-           MENTOR SLOTS 8-10 — the grid holds ten.
-           To add a mentor, copy one block below, uncomment it, and fill in.
-           Photo: replace the <div class="mono"> line with
-             <span class="shot"><img src="/mentors/firstname-lastname.jpg" alt="Dr. Full Name"></span>
-           and upload that portrait to a /mentors/ folder in the repo.
-           Portraits should be 800x1000px (4:5), face centred.
-           Keep the credential line to degree + specialisation.
-           Keep the bio to two lines, using guides / trains / demonstrates /
-           prepares / supports — never treat, cure or heal.
-           NOTE: a mentor's photo and bio need their written permission on file.
-      ============================================================ -->
-
-      <!--
-      <article class="mentor">
-        <div class="mono" aria-hidden="true">AB</div>
-        <h3>Dr. Full Name</h3>
-        <p class="mentor-cred">MD (Ayurveda), Specialisation</p>
-        <p class="mentor-bio">One or two lines: where they practise, and what they teach here.</p>
-      </article>
-      -->
-
-    </div>
-
-    <p class="mentor-note">Experienced practitioners and manufacturing specialists can apply to join the mentor cadre — write to <a href="mailto:academy@ayuceutical.in?subject=Mentor%20cadre%20enquiry">academy@ayuceutical.in</a>.</p>
-
-    <div class="stats-row">
-      <div class="stat"><b>MD</b><span>Rasashastra specialisation</span></div>
-      <div class="stat"><b>GMP</b><span>Certified unit behind the teaching</span></div>
-      <div class="stat"><b>4</b><span>Curriculum zones</span></div>
-      <div class="stat"><b>17+</b><span>Peer-reviewed publications</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta" id="contact">
-  <div class="wrap">
-    <h2>Tell us which route fits</h2>
-    <p>Colleges: send a date range and we will send a proposal on letterhead. Individuals: tell us where you are in your training and we will point you to the right cohort.</p>
-    <div class="cta-actions">
-      <a class="btn btn-solid" href="mailto:academy@ayuceutical.in?subject=Campus%20programme%20enquiry">Colleges &mdash; request a proposal</a>
-      <a class="btn" href="mailto:academy@ayuceutical.in?subject=Cohort%20enquiry">Individuals &mdash; join a cohort</a>
-    </div>
-    <p class="cta-contact"><a href="mailto:academy@ayuceutical.in">academy@ayuceutical.in</a> &nbsp;&middot;&nbsp; <a href="tel:+918219283100">+91 82192 83100</a></p>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <h4>Ayuceutical Academy</h4>
-        <p style="margin:0;max-width:34ch">Rasashastra and pharma-tech mentorship for Ayurvedic doctors and students across India, on campus and in cohorts.</p>
-      </div>
-      <div>
-        <h4>Programmes</h4>
-        <ul>
-          <li><a href="#routes">For colleges</a></li>
-          <li><a href="#routes">Founder track</a></li>
-          <li><a href="#zones">Curriculum</a></li>
-          <li><a href="#mentors">Mentors</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:academy@ayuceutical.in">academy@ayuceutical.in</a></li>
-          <li><a href="tel:+918219283100">+91 82192 83100</a></li>
-          <li><a href="#contact">Enquire</a></li>
-        </ul>
+  <div class="curriculum-grid reveal-stagger">
+    <div class="curriculum-card">
+      <div class="curriculum-card-img"><span class="curriculum-card-icon">&#127793;</span></div>
+      <div class="curriculum-card-body">
+        <h4>Zone 1 — Authenticate</h4>
+        <p>Identify, test, and grade raw Ayurvedic drugs using classical and modern pharmacognosy methods.</p>
       </div>
     </div>
-    <div class="legal">
-      <span>&copy; 2026 Ayuceutical Wellness &amp; Academy Pvt. Ltd., Dharamshala, Himachal Pradesh</span>
-      <span>Ayuceutical<sup>&reg;</sup> is a registered trademark</span>
+    <div class="curriculum-card">
+      <div class="curriculum-card-img"><span class="curriculum-card-icon">&#128293;</span></div>
+      <div class="curriculum-card-body">
+        <h4>Zone 2 — Make</h4>
+        <p>Classical Shodhana, Marana, and formulation — hands-on with Khalva Yantra and Puta furnace.</p>
+      </div>
     </div>
+    <div class="curriculum-card">
+      <div class="curriculum-card-img"><span class="curriculum-card-icon">&#128220;</span></div>
+      <div class="curriculum-card-body">
+        <h4>Zone 3 — Licence</h4>
+        <p>AYUSH manufacturing licence, GMP certification, FSSAI registration — every regulatory gate.</p>
+      </div>
+    </div>
+    <div class="curriculum-card">
+      <div class="curriculum-card-img"><span class="curriculum-card-icon">&#9989;</span></div>
+      <div class="curriculum-card-body">
+        <h4>Zone 4 — Quality</h4>
+        <p>In-process and finished-product checks, batch documentation, stability testing, D&amp;C Act compliance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certification Ladder -->
+<section class="ladder-section">
+  <div class="reveal" style="text-align:center;">
+    <div class="section-label" style="text-align:center;">Certification</div>
+    <h2 style="font-size:clamp(28px,4vw,44px);text-align:center;margin-bottom:12px;">The Metals of Mastery</h2>
+    <p class="section-subtitle" style="margin:0 auto;">Progress through the certification ladder as you complete each zone.</p>
+  </div>
+  <div class="ladder reveal">
+    <div class="ladder-step">
+      <div class="ladder-metal tamra">Tamra</div>
+      <div class="ladder-zones">1 Zone</div>
+      <div class="ladder-desc">Copper</div>
+    </div>
+    <div class="ladder-step">
+      <div class="ladder-metal kansya">Kansya</div>
+      <div class="ladder-zones">2 Zones</div>
+      <div class="ladder-desc">Bronze</div>
+    </div>
+    <div class="ladder-step">
+      <div class="ladder-metal rajata">Rajata</div>
+      <div class="ladder-zones">3 Zones</div>
+      <div class="ladder-desc">Silver</div>
+    </div>
+    <div class="ladder-step">
+      <div class="ladder-metal swarna">Swarna</div>
+      <div class="ladder-zones">All 4 Zones</div>
+      <div class="ladder-desc">Gold &middot; Full Certificate</div>
+    </div>
+  </div>
+</section>
+
+<!-- Two Ways In -->
+<section class="routes-section" id="programmes">
+  <div class="reveal" style="text-align:center;">
+    <div class="section-label" style="text-align:center;">Programmes</div>
+    <h2 class="section-title" style="text-align:center;">Two ways in</h2>
+    <p class="section-subtitle" style="margin:0 auto;">Whether you represent a college or you are a doctor looking to build, there is a route for you.</p>
+  </div>
+  <div class="routes-grid reveal-stagger">
+    <div class="route-card">
+      <div class="route-label">Route One</div>
+      <div class="route-name">For Colleges</div>
+      <p class="route-desc">Invite us to your campus. We deliver seminars, 1–2 day pharma-tech workshops, and industry-exposure visits to our GMP facility — customised to your curriculum and your students' level.</p>
+      <ul class="route-features">
+        <li>Campus seminar (2 hours, no fee for students)</li>
+        <li>Pharma-Tech Workshop (1–2 days at GMP facility)</li>
+        <li>Industry Partnership &amp; MoU</li>
+        <li>Custom curriculum for your institution</li>
+      </ul>
+      <a href="mailto:academy@ayuceutical.in?subject=College%20Partnership%20Enquiry" class="btn-primary route-cta">Request a Proposal</a>
+    </div>
+    <div class="route-card">
+      <div class="route-label">Route Two</div>
+      <div class="route-name">For Doctors &amp; Students</div>
+      <p class="route-desc">Join a cohort. The Founder Track is an 8–12 week mentorship programme for doctors ready to launch — from formulation finalisation and licence application to branding and first batch dispatch.</p>
+      <ul class="route-features">
+        <li>Founder Track (8–12 weeks, 1-on-1 mentorship)</li>
+        <li>Pharma-Tech Workshop enrolment</li>
+        <li>Licensing &amp; go-to-market support</li>
+        <li>Metals certification ladder</li>
+      </ul>
+      <a href="mailto:academy@ayuceutical.in?subject=Join%20a%20Cohort" class="btn-outline route-cta">Join a Cohort</a>
+    </div>
+  </div>
+</section>
+
+<!-- Mentors -->
+<section class="section" id="mentors">
+  <div class="reveal">
+    <div class="section-label">Mentors</div>
+    <h2 class="section-title">Your Faculty</h2>
+    <p class="section-subtitle">Practising MD (Ayurveda) specialists across India — each with clinical depth and manufacturing experience.</p>
+  </div>
+  <div class="mentors-scroll reveal-stagger">
+    <div class="mentor-card">
+      <div class="mentor-photo">
+        <div class="mentor-monogram">VS</div>
+        <div class="mentor-badge">Lead Mentor</div>
+      </div>
+      <div class="mentor-name">Dr. Vikas Saroch</div>
+      <div class="mentor-role">Lead Mentor</div>
+      <div class="mentor-region">Himachal Pradesh</div>
+    </div>
+    <div class="mentor-card">
+      <div class="mentor-photo"><div class="mentor-monogram">NS</div></div>
+      <div class="mentor-name">Dr. Neetika Saroch</div>
+      <div class="mentor-role">Founder</div>
+      <div class="mentor-region">Himachal Pradesh</div>
+    </div>
+    <div class="mentor-card">
+      <div class="mentor-photo"><div class="mentor-monogram">GD</div></div>
+      <div class="mentor-name">Dr. Gaurav Desai</div>
+      <div class="mentor-region">Goa</div>
+    </div>
+    <div class="mentor-card">
+      <div class="mentor-photo"><div class="mentor-monogram">AM</div></div>
+      <div class="mentor-name">Dr. Amit Mane</div>
+      <div class="mentor-region">Maharashtra</div>
+    </div>
+    <div class="mentor-card">
+      <div class="mentor-photo"><div class="mentor-monogram">SS</div></div>
+      <div class="mentor-name">Dr. Samir Sitaram</div>
+      <div class="mentor-region">Maharashtra</div>
+    </div>
+    <div class="mentor-card">
+      <div class="mentor-photo"><div class="mentor-monogram">SB</div></div>
+      <div class="mentor-name">Dr. Santosh B</div>
+      <div class="mentor-region">Karnataka</div>
+    </div>
+    <div class="mentor-card">
+      <div class="mentor-photo"><div class="mentor-monogram">RS</div></div>
+      <div class="mentor-name">Dr. Rajesh Sharma</div>
+      <div class="mentor-region">Jammu &amp; Kashmir</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner" id="contact">
+  <h2 class="reveal">Tell us which<br>route fits</h2>
+  <p class="reveal">Whether you are a college looking for industry exposure or a doctor ready to build, we will find the right programme for you.</p>
+  <div class="cta-actions reveal">
+    <a href="mailto:academy@ayuceutical.in?subject=College%20Partnership%20Enquiry" class="btn-primary">Colleges &mdash; Request a Proposal</a>
+    <a href="mailto:academy@ayuceutical.in?subject=Join%20a%20Cohort" class="btn-outline">Individuals &mdash; Join a Cohort</a>
+  </div>
+  <div class="reveal" style="margin-top: 24px;">
+    <span style="font-size: 13px; color: var(--text-muted);">academy@ayuceutical.in &nbsp;&middot;&nbsp; +91 82192 83100</span>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">AYUCEUTICAL<sup style="font-size:10px;color:var(--gold-dim);">&reg;</sup></div>
+    <p class="footer-desc">Ayuceutical Wellness &amp; Academy Pvt. Ltd. trains Ayurvedic doctors and students in pharmaceutical manufacturing, licensing, and quality systems.</p>
+  </div>
+  <div>
+    <div class="footer-heading">Programmes</div>
+    <ul class="footer-links">
+      <li><a href="#programmes">For Colleges</a></li>
+      <li><a href="#programmes">Founder Track</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#mentors">Mentors</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-heading">Contact</div>
+    <ul class="footer-links">
+      <li><a href="mailto:academy@ayuceutical.in">academy@ayuceutical.in</a></li>
+      <li><a href="tel:+918219283100">+91 82192 83100</a></li>
+      <li><a href="https://wa.me/918437162633" target="_blank" rel="noopener">Enquire on WhatsApp</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-heading">Delivered</div>
+    <ul class="footer-links">
+      <li><span>Across India</span></li>
+      <li><span>On campus and online</span></li>
+      <li><span>Unit at Kangra, HP</span></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Ayuceutical Wellness &amp; Academy Pvt. Ltd.</span>
+    <span>Ayuceutical&reg; is a registered trademark (Class 44)</span>
   </div>
 </footer>
 
-<script>
-(function(){
-  var btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
-  if(!btn||!nav)return;
-  btn.addEventListener('click',function(){
-    var open=nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open?'true':'false');
-  });
-  nav.addEventListener('click',function(e){
-    if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
-  });
-})();
-</script>
+<!-- WhatsApp -->
+<a href="https://wa.me/918437162633" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"EducationalOrganization",
-  "name":"Ayuceutical Academy",
-  "url":"https://ayuceutical.in/",
-  "email":"academy@ayuceutical.in",
-  "telephone":"+91-82192-83100",
-  "description":"Mentorship programme in Rasashastra and Ayurvedic pharmaceutics for Ayurvedic colleges, doctors and students in India.",
-  "areaServed":{"@type":"Country","name":"India"},
-  "address":{"@type":"PostalAddress","addressLocality":"Dharamshala","addressRegion":"Himachal Pradesh","addressCountry":"IN"},
-  "parentOrganization":{"@type":"Organization","name":"Ayuceutical Wellness & Academy Pvt. Ltd."},
-  "founder":[
-    {"@type":"Person","name":"Dr. Vikas Saroch","jobTitle":"MD (Ayurveda), Rasashastra"},
-    {"@type":"Person","name":"Dr. Neetika Saroch","jobTitle":"MD (Ayurveda)"}
-  ]
-}
+<script>
+  // ── Gold particle field ──
+  (function() {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var w, h, particles = [];
+    var PARTICLE_COUNT = 60;
+    var matchesReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function resize() {
+      w = canvas.width = canvas.offsetWidth;
+      h = canvas.height = canvas.offsetHeight;
+    }
+    function createParticle() {
+      return {
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 2 + 0.5,
+        alpha: Math.random() * 0.4 + 0.1,
+        pulse: Math.random() * Math.PI * 2
+      };
+    }
+    function init() {
+      resize();
+      particles = [];
+      for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(createParticle());
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      if (matchesReduced) {
+        particles.forEach(function(p) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(212, 169, 64, ' + p.alpha + ')';
+          ctx.fill();
+        });
+        return;
+      }
+      particles.forEach(function(p) {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.pulse += 0.01;
+        var a = p.alpha * (0.6 + 0.4 * Math.sin(p.pulse));
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(212, 169, 64, ' + a + ')';
+        ctx.fill();
+      });
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(212, 169, 64, ' + (0.06 * (1 - dist / 120)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('resize', resize);
+    init();
+    if (matchesReduced) draw();
+    else requestAnimationFrame(draw);
+  })();
+
+  // ── Scroll reveal ──
+  (function() {
+    var els = document.querySelectorAll('.reveal, .reveal-stagger');
+    if (!els.length) return;
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  })();
+
+  // ── Nav scroll ──
+  (function() {
+    var nav = document.getElementById('mainNav');
+    if (!nav) return;
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          nav.style.background = window.scrollY > 60
+            ? 'rgba(10, 8, 5, 0.95)'
+            : 'rgba(10, 8, 5, 0.85)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  })();
+
+  // ── Smooth scroll ──
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // close mobile menu if open
+        document.getElementById('mainNav').classList.remove('menu-open');
+      }
+    });
+  });
+
+  // ── Mobile menu toggle ──
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mainNav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('menu-open');
+    });
+  })();
 </script>
 </body>
 </html>
