@@ -421,7 +421,11 @@ p { margin: 0 0 1em; }
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: blur(2px);
   transition: all 0.6s var(--ease);
+}
+.zone-card.active .zone-card-bg {
+  filter: blur(0);
 }
 .zone-card:nth-child(1) .zone-card-bg { background-image: url('zones/zone-01-authenticate.jpg'); }
 .zone-card:nth-child(2) .zone-card-bg { background-image: url('zones/zone-02-make.jpg'); }
@@ -431,7 +435,7 @@ p { margin: 0 0 1em; }
 .zone-card-bg::before {
   content: '';
   position: absolute; inset: 0;
-  background: rgba(10,8,5,0.98);
+  background: rgba(10,8,5,0.94);
   z-index: 1;
   transition: all 0.6s var(--ease);
 }
