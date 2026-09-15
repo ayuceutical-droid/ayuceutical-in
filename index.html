@@ -427,16 +427,28 @@ p { margin: 0 0 1em; }
 .zone-card:nth-child(2) .zone-card-bg { background-image: url('zones/zone-02-make.jpg'); }
 .zone-card:nth-child(3) .zone-card-bg { background-image: url('zones/zone-03-licence.jpg'); }
 .zone-card:nth-child(4) .zone-card-bg { background-image: url('zones/zone-04-quality.jpg'); }
-/* Dark overlay — heavier on collapsed, lighter gradient on active */
+/* Dark overlay — dual-layer: ::before = linear gradient, ::after = radial vignette */
 .zone-card-bg::before {
   content: '';
   position: absolute; inset: 0;
-  background: rgba(10,8,5,0.78);
+  background: linear-gradient(180deg, rgba(10,8,5,0.5) 0%, rgba(10,8,5,0.85) 100%);
   z-index: 1;
   transition: all 0.6s var(--ease);
 }
 .zone-card.active .zone-card-bg::before {
-  background: linear-gradient(105deg, rgba(10,8,5,0.88) 30%, rgba(10,8,5,0.45) 75%);
+  background: linear-gradient(180deg, rgba(10,8,5,0.74) 0%, rgba(10,8,5,0.92) 100%);
+}
+.zone-card-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(66% 66% at 50% 50%, rgba(10,8,5,0.6) 0%, rgba(10,8,5,0.95) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+  pointer-events: none;
+}
+.zone-card.active .zone-card-bg::after {
+  opacity: 1;
 }
 /* Vertical label for collapsed cards */
 .zone-card-label {
@@ -532,7 +544,8 @@ p { margin: 0 0 1em; }
   .zone-card { min-height: 340px; }
   .zone-card-label { display: none; }
   .zone-card-content { opacity: 1; pointer-events: auto; max-width: 100%; padding: 32px 28px; }
-  .zone-card-bg::before { background: rgba(10,8,5,0.75) !important; }
+  .zone-card-bg::before { background: linear-gradient(180deg, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.9) 100%) !important; }
+  .zone-card-bg::after { opacity: 1 !important; }
   .zone-card::after { inset: 10px; }
 }
 @media (max-width: 500px) {
@@ -1074,7 +1087,7 @@ p { margin: 0 0 1em; }
         <div class="zone-card-number">04</div>
         <div class="zone-card-title">Quality and law</div>
         <div class="zone-card-subtitle">Testing and Compliance</div>
-        <p class="zone-card-desc">In-house QC testing, stability studies, pharmacovigilance and Drugs &amp; Cosmetics Act compliance.</p>
+        <p class="zone-card-desc">Drug Testing Laboratory protocols, specification writing, and the advertising and labelling rules that govern every Ayurvedic product sold in India.</p>
         <div class="zone-card-icon">&#9878;</div>
       </div>
     </div>
