@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
+  --display: 'Cormorant Garamond', 'Georgia', serif;
+  --body: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --gutter: max(16px, 5vw);
+}
+/* ── Dark theme (default) ── */
+[data-theme="dark"] {
   --ground: #0A0805;
   --surface: #131010;
   --card: #1A1612;
@@ -21,10 +28,34 @@
   --text: #F5E6B0;
   --text-muted: #9A8B6F;
   --text-body: #C4B48E;
-  --display: 'Cormorant Garamond', 'Georgia', serif;
-  --body: 'Josefin Sans', 'Helvetica Neue', sans-serif;
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --gutter: max(16px, 5vw);
+  --nav-bg: rgba(10, 8, 5, 0.7);
+  --nav-bg-scroll: rgba(10, 8, 5, 0.95);
+  --hero-overlay-from: rgba(10,8,5,0.5);
+  --zone-overlay: rgba(10,8,5,0.94);
+  --zone-overlay-active: rgba(10,8,5,0.88);
+}
+/* ── Light theme ── */
+[data-theme="light"] {
+  --ground: #FDFAF5;
+  --surface: #F5F0E8;
+  --card: #FFFFFF;
+  --border: #E0D6C4;
+  --gold: #B8932E;
+  --gold-dim: #8A6E22;
+  --gold-bright: #D4A940;
+  --cream: #2A1F0E;
+  --text: #2A1F0E;
+  --text-muted: #6B5D4A;
+  --text-body: #4A3F2E;
+  --nav-bg: rgba(253, 250, 245, 0.85);
+  --nav-bg-scroll: rgba(253, 250, 245, 0.97);
+  --hero-overlay-from: rgba(253,250,245,0.5);
+  --zone-overlay: rgba(253,250,245,0.92);
+  --zone-overlay-active: rgba(253,250,245,0.82);
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 body {
   background: var(--ground);
@@ -50,7 +81,7 @@ p { margin: 0 0 1em; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px var(--gutter);
-  background: rgba(10, 8, 5, 0.7);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(212, 169, 64, 0.08);
@@ -952,6 +983,84 @@ p { margin: 0 0 1em; }
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
+
+/* ── Light theme overrides ── */
+[data-theme="light"] .hero-overlay {
+  background: radial-gradient(ellipse at 50% 40%, transparent 0%, rgba(253,250,245,0.6) 70%);
+}
+[data-theme="light"] .hero-video { opacity: 0.25; }
+[data-theme="light"] .hero-bg {
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(184,147,46,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 40%, rgba(184,147,46,0.04) 0%, transparent 50%);
+}
+[data-theme="light"] .taught-hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(253,250,245,0.4) 0%, rgba(253,250,245,0.7) 50%, rgba(253,250,245,0.95) 100%),
+    radial-gradient(ellipse at center, transparent 0%, rgba(253,250,245,0.5) 80%);
+}
+[data-theme="light"] .zone-card-bg::before { background: var(--zone-overlay); }
+[data-theme="light"] .zone-card.active .zone-card-bg::before { background: var(--zone-overlay-active); }
+[data-theme="light"] .zone-card-bg::after {
+  background: radial-gradient(66% 66% at 50% 50%, rgba(253,250,245,0.7) 0%, rgba(253,250,245,0.92) 100%);
+}
+[data-theme="light"] .zone-card-label { color: var(--gold); }
+[data-theme="light"] .whatsapp-float { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.25); }
+[data-theme="light"] .grain { opacity: 0.012; }
+[data-theme="light"] .nav { border-bottom-color: rgba(0,0,0,0.06); }
+[data-theme="light"] .credential-bar { border-color: var(--border); }
+[data-theme="light"] .nav.menu-open .nav-links { background: rgba(253,250,245,0.97); }
+[data-theme="light"] .ladder-metal.rajata { color: #7A7A7A; }
+
+/* ── Theme + Language Toggle ── */
+.site-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 12px;
+}
+.toggle-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+.toggle-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.toggle-btn .icon { font-size: 14px; line-height: 1; }
+@media (max-width: 768px) {
+  .site-controls {
+    position: absolute;
+    top: 100%;
+    right: var(--gutter);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 101;
+  }
+  .nav.menu-open .site-controls {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 </style>
 </head>
 <body>
@@ -962,12 +1071,16 @@ p { margin: 0 0 1em; }
 <nav class="nav" id="mainNav">
   <div class="nav-logo">Ayuceutical<sup>&reg;</sup> Academy</div>
   <ul class="nav-links">
-    <li><a href="#curriculum">Curriculum</a></li>
-    <li><a href="#programmes">Programmes</a></li>
-    <li><a href="#mentors">Mentors</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#curriculum" data-i18n="nav.curriculum">Curriculum</a></li>
+    <li><a href="#programmes" data-i18n="nav.programmes">Programmes</a></li>
+    <li><a href="#mentors" data-i18n="nav.mentors">Mentors</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Get Started</a>
+  <div class="site-controls">
+    <button class="toggle-btn" id="themeToggle" aria-label="Toggle theme"><span class="icon" id="themeIcon">&#9788;</span> <span id="themeLabel">Light</span></button>
+    <button class="toggle-btn" id="langToggle" aria-label="Toggle language"><span class="icon">&#127760;</span> <span id="langLabel">HI</span></button>
+  </div>
+  <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get Started</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
   </button>
@@ -981,16 +1094,16 @@ p { margin: 0 0 1em; }
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Ayurvedic Pharma-Tech Mentorship &middot; India</div>
-    <h1>You can recite the classics.<br><em>Can you make the medicine?</em></h1>
-    <p class="hero-desc">Ayuceutical&reg; Academy is a mentorship programme in Rasashastra and Ayurvedic pharmaceutics &mdash; authentication, preparation, licensing and quality law.</p>
-    <p class="hero-desc-sub">Colleges bring it to campus for a full batch. Individual doctors and students join a cohort directly.</p>
+    <div class="hero-eyebrow" data-i18n="hero.eyebrow">Ayurvedic Pharma-Tech Mentorship &middot; India</div>
+    <h1 data-i18n="hero.title">You can recite the classics.<br><em>Can you make the medicine?</em></h1>
+    <p class="hero-desc" data-i18n="hero.desc">Ayuceutical&reg; Academy is a mentorship programme in Rasashastra and Ayurvedic pharmaceutics &mdash; authentication, preparation, licensing and quality law.</p>
+    <p class="hero-desc-sub" data-i18n="hero.sub">Colleges bring it to campus for a full batch. Individual doctors and students join a cohort directly.</p>
     <div class="hero-actions">
-      <a href="#programmes" class="btn-primary">Find Your Route</a>
-      <a href="#curriculum" class="btn-outline">See the Curriculum</a>
+      <a href="#programmes" class="btn-primary" data-i18n="hero.cta1">Find Your Route</a>
+      <a href="#curriculum" class="btn-outline" data-i18n="hero.cta2">See the Curriculum</a>
     </div>
   </div>
-  <div class="hero-footer-line">Delivered across India, on campus and online</div>
+  <div class="hero-footer-line" data-i18n="hero.footer">Delivered across India, on campus and online</div>
   <div class="hero-scroll">
     <span>Scroll</span>
     <div class="hero-scroll-line"></div>
@@ -1011,17 +1124,17 @@ p { margin: 0 0 1em; }
   </div>
   <div class="taught-hero-overlay"></div>
   <div class="taught-hero-content reveal">
-    <h2>Taught by people<br>who still <em>do the work</em></h2>
-    <p>Taught by MD specialists who run a GMP-certified manufacturing unit, so what you learn is what production actually requires.</p>
+    <h2 data-i18n="taught.title">Taught by people<br>who still <em>do the work</em></h2>
+    <p data-i18n="taught.desc">Taught by MD specialists who run a GMP-certified manufacturing unit, so what you learn is what production actually requires.</p>
   </div>
 </section>
 
 <!-- Certification Ladder -->
 <section class="ladder-section" id="certification">
   <div class="reveal">
-    <div style="font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">The Certification Ladder</div>
+    <div style="font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;" data-i18n="ladder.eyebrow">The Certification Ladder</div>
     <div class="ladder-intro">
-      <h2>Named for the metals of Rasashastra. Each zone completed moves a student one rung.</h2>
+      <h2 data-i18n="ladder.title">Named for the metals of Rasashastra. Each zone completed moves a student one rung.</h2>
     </div>
   </div>
   <div class="ladder reveal">
@@ -1047,51 +1160,51 @@ p { margin: 0 0 1em; }
 <!-- Four Zones -->
 <section class="zones-section" id="curriculum">
   <div class="zones-header reveal">
-    <h2>Four zones, taught in sequence</h2>
-    <p>Each zone is a working session with materials in hand. Students authenticate, prepare, document and defend &mdash; in that order, because that is the order the work happens in.</p>
+    <h2 data-i18n="zones.title">Four zones, taught in sequence</h2>
+    <p data-i18n="zones.desc">Each zone is a working session with materials in hand. Students authenticate, prepare, document and defend &mdash; in that order, because that is the order the work happens in.</p>
   </div>
   <div class="zones-grid reveal-stagger">
     <div class="zone-card active" data-zone="0">
       <div class="zone-card-bg"></div>
-      <div class="zone-card-label">01 &ensp; Authenticate</div>
+      <div class="zone-card-label" data-i18n="zone1.label">01 &ensp; Authenticate</div>
       <div class="zone-card-content">
         <div class="zone-card-number">01</div>
-        <div class="zone-card-title">Authenticate</div>
-        <div class="zone-card-subtitle">Raw Drug Identity</div>
-        <p class="zone-card-desc">Organoleptic and chemical identification of herbs, minerals and metals.</p>
+        <div class="zone-card-title" data-i18n="zone1.title">Authenticate</div>
+        <div class="zone-card-subtitle" data-i18n="zone1.sub">Raw Drug Identity</div>
+        <p class="zone-card-desc" data-i18n="zone1.desc">Organoleptic and chemical identification of herbs, minerals and metals.</p>
         <div class="zone-card-icon">&#9883;</div>
       </div>
     </div>
     <div class="zone-card" data-zone="1">
       <div class="zone-card-bg"></div>
-      <div class="zone-card-label">02 &ensp; Make</div>
+      <div class="zone-card-label" data-i18n="zone2.label">02 &ensp; Make</div>
       <div class="zone-card-content">
         <div class="zone-card-number">02</div>
-        <div class="zone-card-title">Make</div>
-        <div class="zone-card-subtitle">Classical Manufacturing</div>
-        <p class="zone-card-desc">Hands-on preparation of Bhasma, Asava-Arishta, Sneha Kalpana and more using traditional methods.</p>
+        <div class="zone-card-title" data-i18n="zone2.title">Make</div>
+        <div class="zone-card-subtitle" data-i18n="zone2.sub">Classical Manufacturing</div>
+        <p class="zone-card-desc" data-i18n="zone2.desc">Hands-on preparation of Bhasma, Asava-Arishta, Sneha Kalpana and more using traditional methods.</p>
         <div class="zone-card-icon">&#9874;</div>
       </div>
     </div>
     <div class="zone-card" data-zone="2">
       <div class="zone-card-bg"></div>
-      <div class="zone-card-label">03 &ensp; Licence to launch</div>
+      <div class="zone-card-label" data-i18n="zone3.label">03 &ensp; Licence to launch</div>
       <div class="zone-card-content">
         <div class="zone-card-number">03</div>
-        <div class="zone-card-title">Licence to launch</div>
-        <div class="zone-card-subtitle">Regulatory &amp; Licensing</div>
-        <p class="zone-card-desc">AYUSH licensing, GMP compliance, FSSAI registration and product-launch documentation.</p>
+        <div class="zone-card-title" data-i18n="zone3.title">Licence to launch</div>
+        <div class="zone-card-subtitle" data-i18n="zone3.sub">Regulatory &amp; Licensing</div>
+        <p class="zone-card-desc" data-i18n="zone3.desc">AYUSH licensing, GMP compliance, FSSAI registration and product-launch documentation.</p>
         <div class="zone-card-icon">&#9997;</div>
       </div>
     </div>
     <div class="zone-card" data-zone="3">
       <div class="zone-card-bg"></div>
-      <div class="zone-card-label">04 &ensp; Quality and law</div>
+      <div class="zone-card-label" data-i18n="zone4.label">04 &ensp; Quality and law</div>
       <div class="zone-card-content">
         <div class="zone-card-number">04</div>
-        <div class="zone-card-title">Quality and law</div>
-        <div class="zone-card-subtitle">Testing and Compliance</div>
-        <p class="zone-card-desc">Drug Testing Laboratory protocols, specification writing, and the advertising and labelling rules that govern every Ayurvedic product sold in India.</p>
+        <div class="zone-card-title" data-i18n="zone4.title">Quality and law</div>
+        <div class="zone-card-subtitle" data-i18n="zone4.sub">Testing and Compliance</div>
+        <p class="zone-card-desc" data-i18n="zone4.desc">Drug Testing Laboratory protocols, specification writing, and the advertising and labelling rules that govern every Ayurvedic product sold in India.</p>
         <div class="zone-card-icon">&#9878;</div>
       </div>
     </div>
@@ -1101,33 +1214,33 @@ p { margin: 0 0 1em; }
 <!-- Two Ways In -->
 <section class="routes-section" id="programmes">
   <div class="routes-header reveal">
-    <h2>Two ways in</h2>
-    <p>The curriculum is the same either way. What differs is who arranges it, how long you spend, and how close the guidance gets.</p>
+    <h2 data-i18n="routes.title">Two ways in</h2>
+    <p data-i18n="routes.desc">The curriculum is the same either way. What differs is who arranges it, how long you spend, and how close the guidance gets.</p>
   </div>
   <div class="routes-grid reveal-stagger">
     <div class="route-card">
-      <div class="route-label">Route One</div>
-      <div class="route-name">For colleges</div>
-      <p class="route-desc">We come to your campus and teach a full batch. Arranged through the entrepreneurship cell, paid for by the institution.</p>
+      <div class="route-label" data-i18n="route1.label">Route One</div>
+      <div class="route-name" data-i18n="route1.name">For colleges</div>
+      <p class="route-desc" data-i18n="route1.desc">We come to your campus and teach a full batch. Arranged through the entrepreneurship cell, paid for by the institution.</p>
       <ul class="route-features">
-        <li><strong>Campus seminar</strong> &mdash; 2 hours, whole batch</li>
-        <li><strong>Pharma-tech workshop</strong> &mdash; 1&ndash;2 days, hands-on</li>
-        <li><strong>Industry partnership</strong> &mdash; discussed case by case</li>
+        <li data-i18n="route1.f1"><strong>Campus seminar</strong> &mdash; 2 hours, whole batch</li>
+        <li data-i18n="route1.f2"><strong>Pharma-tech workshop</strong> &mdash; 1&ndash;2 days, hands-on</li>
+        <li data-i18n="route1.f3"><strong>Industry partnership</strong> &mdash; discussed case by case</li>
       </ul>
-      <a href="mailto:academy@ayuceutical.in?subject=College%20Partnership%20Enquiry" class="btn-primary" style="align-self:flex-start;">Request a Proposal</a>
-      <p class="route-note">For principals and RIEDC coordinators. Institutional fee; students pay nothing.</p>
+      <a href="mailto:academy@ayuceutical.in?subject=College%20Partnership%20Enquiry" class="btn-primary" style="align-self:flex-start;" data-i18n="route1.cta">Request a Proposal</a>
+      <p class="route-note" data-i18n="route1.note">For principals and RIEDC coordinators. Institutional fee; students pay nothing.</p>
     </div>
     <div class="route-card">
-      <div class="route-label">Route Two</div>
-      <div class="route-name">For doctors and students</div>
-      <p class="route-desc">Join a small cohort yourself. Eight to twelve weeks of direct mentorship through all four zones, with the same mentors throughout.</p>
+      <div class="route-label" data-i18n="route2.label">Route Two</div>
+      <div class="route-name" data-i18n="route2.name">For doctors and students</div>
+      <p class="route-desc" data-i18n="route2.desc">Join a small cohort yourself. Eight to twelve weeks of direct mentorship through all four zones, with the same mentors throughout.</p>
       <ul class="route-features">
-        <li><strong>Founder track</strong> &mdash; 8&ndash;12 week cohort</li>
-        <li>Small group, so questions get answered</li>
-        <li>Ends at Swarna, the full certification rung</li>
+        <li data-i18n="route2.f1"><strong>Founder track</strong> &mdash; 8&ndash;12 week cohort</li>
+        <li data-i18n="route2.f2">Small group, so questions get answered</li>
+        <li data-i18n="route2.f3">Ends at Swarna, the full certification rung</li>
       </ul>
-      <a href="mailto:academy@ayuceutical.in?subject=Join%20a%20Cohort" class="btn-outline" style="align-self:flex-start;">Join the Next Cohort</a>
-      <p class="route-note">For BAMS and MD students, and practising doctors preparing to start a unit.</p>
+      <a href="mailto:academy@ayuceutical.in?subject=Join%20a%20Cohort" class="btn-outline" style="align-self:flex-start;" data-i18n="route2.cta">Join the Next Cohort</a>
+      <p class="route-note" data-i18n="route2.note">For BAMS and MD students, and practising doctors preparing to start a unit.</p>
     </div>
   </div>
 </section>
@@ -1135,10 +1248,10 @@ p { margin: 0 0 1em; }
 <!-- Mentors -->
 <section class="mentors-section" id="mentors">
   <div class="reveal">
-    <h2 style="font-size:clamp(32px,5vw,52px);margin-bottom:12px;">Taught by people who still do the work</h2>
+    <h2 style="font-size:clamp(32px,5vw,52px);margin-bottom:12px;" data-i18n="mentors.title">Taught by people who still do the work</h2>
     <div class="about-text">
-      <p>The academy is led by Dr. Vikas Saroch and Dr. Neetika Saroch, both MD (Ayurveda), and taught by a cadre of mentors drawn from clinical practice and licensed manufacturing. Between practice and the technical direction of a GMP-certified unit, the material taught here is the material used in production &mdash; which is why the sessions are demonstrations rather than lectures.</p>
-      <p>HHAP, the unit behind the teaching, holds AYUSH manufacturing licence HP-301-Ay and operates from Kangra, Himachal Pradesh.</p>
+      <p data-i18n="mentors.desc1">The academy is led by Dr. Vikas Saroch and Dr. Neetika Saroch, both MD (Ayurveda), and taught by a cadre of mentors drawn from clinical practice and licensed manufacturing. Between practice and the technical direction of a GMP-certified unit, the material taught here is the material used in production &mdash; which is why the sessions are demonstrations rather than lectures.</p>
+      <p data-i18n="mentors.desc2">HHAP, the unit behind the teaching, holds AYUSH manufacturing licence HP-301-Ay and operates from Kangra, Himachal Pradesh.</p>
     </div>
   </div>
 
@@ -1166,7 +1279,7 @@ p { margin: 0 0 1em; }
 
   <!-- Mentor Cadre -->
   <div class="reveal">
-    <div class="mentor-cadre-heading">The Mentor Cadre</div>
+    <div class="mentor-cadre-heading" data-i18n="mentors.cadre">The Mentor Cadre</div>
   </div>
   <div class="mentors-cadre-grid reveal">
     <div class="mentor-card">
@@ -1215,39 +1328,39 @@ p { margin: 0 0 1em; }
       </div>
     </div>
   </div>
-  <p class="mentor-cadre-note reveal">Experienced practitioners and manufacturing specialists can apply to join the mentor cadre.</p>
+  <p class="mentor-cadre-note reveal" data-i18n="mentors.cadre_note">Experienced practitioners and manufacturing specialists can apply to join the mentor cadre.</p>
 </section>
 
 <!-- Stats Row -->
 <div class="stats-row reveal">
   <div class="stat">
     <div class="stat-value">MD, PhD</div>
-    <div class="stat-label">Specialisation</div>
+    <div class="stat-label" data-i18n="stat.s1">Specialisation</div>
   </div>
   <div class="stat">
     <div class="stat-value">GMP</div>
-    <div class="stat-label">Certified unit behind the teaching</div>
+    <div class="stat-label" data-i18n="stat.s2">Certified unit behind the teaching</div>
   </div>
   <div class="stat">
     <div class="stat-value">4</div>
-    <div class="stat-label">Curriculum zones</div>
+    <div class="stat-label" data-i18n="stat.s3">Curriculum zones</div>
   </div>
   <div class="stat">
     <div class="stat-value">180+</div>
-    <div class="stat-label">Peer-reviewed publications from the team</div>
+    <div class="stat-label" data-i18n="stat.s4">Peer-reviewed publications from the team</div>
   </div>
 </div>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="cta-heading reveal">
-    <h2>Tell us which route fits</h2>
+    <h2 data-i18n="cta.title">Tell us which route fits</h2>
   </div>
   <div class="cta-content reveal">
-    <p>Colleges: send a date range and we will send a proposal on letterhead. Individuals: tell us where you are in your training and we will point you to the right cohort.</p>
+    <p data-i18n="cta.desc">Colleges: send a date range and we will send a proposal on letterhead. Individuals: tell us where you are in your training and we will point you to the right cohort.</p>
     <div class="cta-actions">
-      <a href="mailto:academy@ayuceutical.in?subject=College%20Partnership%20Enquiry" class="btn-primary">Colleges &mdash; Request a Proposal</a>
-      <a href="mailto:academy@ayuceutical.in?subject=Join%20a%20Cohort" class="btn-outline">Individuals &mdash; Join a Cohort</a>
+      <a href="mailto:academy@ayuceutical.in?subject=College%20Partnership%20Enquiry" class="btn-primary" data-i18n="cta.btn1">Colleges &mdash; Request a Proposal</a>
+      <a href="mailto:academy@ayuceutical.in?subject=Join%20a%20Cohort" class="btn-outline" data-i18n="cta.btn2">Individuals &mdash; Join a Cohort</a>
     </div>
   </div>
 </section>
@@ -1256,19 +1369,19 @@ p { margin: 0 0 1em; }
 <footer class="footer">
   <div>
     <div class="footer-brand">Ayuceutical<sup>&reg;</sup> Academy</div>
-    <p class="footer-desc">Rasashastra and pharma-tech mentorship for Ayurvedic doctors and students across India, on campus and in cohorts.</p>
+    <p class="footer-desc" data-i18n="footer.desc">Rasashastra and pharma-tech mentorship for Ayurvedic doctors and students across India, on campus and in cohorts.</p>
   </div>
   <div>
-    <div class="footer-heading">Programmes</div>
+    <div class="footer-heading" data-i18n="footer.programmes">Programmes</div>
     <ul class="footer-links">
-      <li><a href="#programmes">For colleges</a></li>
-      <li><a href="#programmes">Founder track</a></li>
-      <li><a href="#curriculum">Curriculum</a></li>
-      <li><a href="#mentors">Mentors</a></li>
+      <li><a href="#programmes" data-i18n="footer.colleges">For colleges</a></li>
+      <li><a href="#programmes" data-i18n="footer.founder">Founder track</a></li>
+      <li><a href="#curriculum" data-i18n="nav.curriculum">Curriculum</a></li>
+      <li><a href="#mentors" data-i18n="nav.mentors">Mentors</a></li>
     </ul>
   </div>
   <div>
-    <div class="footer-heading">Contact</div>
+    <div class="footer-heading" data-i18n="nav.contact">Contact</div>
     <ul class="footer-links">
       <li><a href="mailto:academy@ayuceutical.in">academy@ayuceutical.in</a></li>
       <li><a href="tel:+918219283100">+91 82192 83100</a></li>
@@ -1276,10 +1389,10 @@ p { margin: 0 0 1em; }
     </ul>
   </div>
   <div>
-    <div class="footer-heading">Delivered</div>
+    <div class="footer-heading" data-i18n="footer.delivered">Delivered</div>
     <ul class="footer-links">
-      <li><span>Across India, on campus and online.</span></li>
-      <li><span>Unit at Kangra, Himachal Pradesh.</span></li>
+      <li><span data-i18n="footer.del1">Across India, on campus and online.</span></li>
+      <li><span data-i18n="footer.del2">Unit at Kangra, Himachal Pradesh.</span></li>
     </ul>
   </div>
   <div class="footer-bottom">
@@ -1313,21 +1426,20 @@ p { margin: 0 0 1em; }
   var nav = document.getElementById('mainNav');
   if (!nav) return;
   window.addEventListener('scroll', function() {
-    nav.style.background = window.scrollY > 60
-      ? 'rgba(10, 8, 5, 0.95)'
-      : 'rgba(10, 8, 5, 0.7)';
+    var root = document.documentElement;
+    var theme = root.getAttribute('data-theme');
+    if (window.scrollY > 60) {
+      nav.style.background = theme === 'light' ? 'rgba(253,250,245,0.97)' : 'rgba(10,8,5,0.95)';
+    } else {
+      nav.style.background = theme === 'light' ? 'rgba(253,250,245,0.85)' : 'rgba(10,8,5,0.7)';
+    }
   });
 })();
 
-// ── Smooth scroll ──
+// ── Smooth scroll (CSS scroll-behavior handles the animation, just close mobile menu) ──
 document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    var target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.getElementById('mainNav').classList.remove('menu-open');
-    }
+  a.addEventListener('click', function() {
+    document.getElementById('mainNav').classList.remove('menu-open');
   });
 });
 
@@ -1354,7 +1466,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
         c.classList.remove('active');
       }
     });
-    // Update grid columns: active card gets 3fr, others 1fr
     var cols = [];
     cards.forEach(function(c, i) {
       cols.push(i === idx ? '3fr' : '1fr');
@@ -1366,11 +1477,171 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   cards.forEach(function(card, i) {
     card.addEventListener('click', function() { activateZone(i); });
   });
-  // Reset on resize for mobile
   window.addEventListener('resize', function() {
     if (window.innerWidth <= 900) {
       grid.style.gridTemplateColumns = '';
     }
+  });
+})();
+
+// ── Theme toggle ──
+(function() {
+  var btn = document.getElementById('themeToggle');
+  var icon = document.getElementById('themeIcon');
+  var label = document.getElementById('themeLabel');
+  var root = document.documentElement;
+  var nav = document.getElementById('mainNav');
+
+  // Restore saved theme
+  try {
+    var saved = localStorage.getItem('aa-theme');
+    if (saved === 'light' || saved === 'dark') {
+      root.setAttribute('data-theme', saved);
+    }
+  } catch(e) {}
+
+  function updateBtn() {
+    var isDark = root.getAttribute('data-theme') === 'dark';
+    icon.innerHTML = isDark ? '&#9788;' : '&#9790;';
+    label.textContent = isDark ? 'Light' : 'Dark';
+    // Reset nav background
+    if (nav) {
+      nav.style.background = '';
+      window.dispatchEvent(new Event('scroll'));
+    }
+  }
+  updateBtn();
+
+  btn.addEventListener('click', function() {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('aa-theme', next); } catch(e) {}
+    updateBtn();
+  });
+})();
+
+// ── Language toggle (EN/HI) ──
+(function() {
+  var btn = document.getElementById('langToggle');
+  var label = document.getElementById('langLabel');
+  var currentLang = 'en';
+
+  // Store original English innerHTML
+  var originals = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    originals[el.getAttribute('data-i18n')] = el.innerHTML;
+  });
+
+  var hi = {
+    'nav.curriculum': 'पाठ्यक्रम',
+    'nav.programmes': 'कार्यक्रम',
+    'nav.mentors': 'मार्गदर्शक',
+    'nav.contact': 'संपर्क',
+    'nav.cta': 'शुरू करें',
+    'hero.eyebrow': 'आयुर्वेदिक फार्मा-टेक मेंटरशिप &middot; भारत',
+    'hero.title': 'आप शास्त्र पढ़ सकते हैं।<br><em>क्या आप औषधि बना सकते हैं?</em>',
+    'hero.desc': 'Ayuceutical&reg; Academy रसशास्त्र और आयुर्वेदिक फार्मास्यूटिक्स में एक मेंटरशिप कार्यक्रम है &mdash; प्रमाणीकरण, निर्माण, लाइसेंसिंग और गुणवत्ता विधि।',
+    'hero.sub': 'कॉलेज इसे पूरे बैच के लिए कैम्पस पर लाते हैं। व्यक्तिगत चिकित्सक और छात्र सीधे कोहॉर्ट में शामिल होते हैं।',
+    'hero.cta1': 'अपना रास्ता खोजें',
+    'hero.cta2': 'पाठ्यक्रम देखें',
+    'hero.footer': 'पूरे भारत में, कैम्पस पर और ऑनलाइन',
+    'taught.title': 'उनसे सीखें जो<br>आज भी <em>यह काम करते हैं</em>',
+    'taught.desc': 'MD विशेषज्ञों द्वारा पढ़ाया जाता है जो GMP-प्रमाणित विनिर्माण इकाई चलाते हैं, इसलिए आप जो सीखते हैं वही उत्पादन में आवश्यक है।',
+    'ladder.eyebrow': 'प्रमाणन सोपान',
+    'ladder.title': 'रसशास्त्र की धातुओं के नाम पर। प्रत्येक ज़ोन पूरा करने पर छात्र एक सोपान ऊपर चढ़ता है।',
+    'zones.title': 'चार ज़ोन, क्रमबद्ध शिक्षण',
+    'zones.desc': 'प्रत्येक ज़ोन सामग्री के साथ एक कार्यशाला है। छात्र प्रमाणित करते हैं, तैयार करते हैं, प्रलेखित करते हैं और प्रस्तुत करते हैं &mdash; इसी क्रम में, क्योंकि काम इसी क्रम में होता है।',
+    'zone1.label': '01 &ensp; प्रमाणीकरण',
+    'zone1.title': 'प्रमाणीकरण',
+    'zone1.sub': 'कच्ची औषधि पहचान',
+    'zone1.desc': 'जड़ी-बूटियों, खनिजों और धातुओं की इन्द्रियगम्य और रासायनिक पहचान।',
+    'zone2.label': '02 &ensp; निर्माण',
+    'zone2.title': 'निर्माण',
+    'zone2.sub': 'शास्त्रीय विनिर्माण',
+    'zone2.desc': 'भस्म, आसव-अरिष्ट, स्नेह कल्पना आदि का पारम्परिक विधियों से हस्त-निर्माण।',
+    'zone3.label': '03 &ensp; लाइसेंस',
+    'zone3.title': 'लाइसेंस से लॉन्च तक',
+    'zone3.sub': 'नियामक एवं लाइसेंसिंग',
+    'zone3.desc': 'AYUSH लाइसेंसिंग, GMP अनुपालन, FSSAI पंजीकरण और उत्पाद-लॉन्च प्रलेखन।',
+    'zone4.label': '04 &ensp; गुणवत्ता और विधि',
+    'zone4.title': 'गुणवत्ता और विधि',
+    'zone4.sub': 'परीक्षण और अनुपालन',
+    'zone4.desc': 'Drug Testing Laboratory प्रोटोकॉल, विनिर्देश लेखन, और विज्ञापन एवं लेबलिंग नियम जो भारत में बिकने वाले प्रत्येक आयुर्वेदिक उत्पाद को नियंत्रित करते हैं।',
+    'routes.title': 'दो रास्ते',
+    'routes.desc': 'पाठ्यक्रम दोनों में समान है। अंतर यह है कि कौन व्यवस्था करता है, आप कितना समय देते हैं, और मार्गदर्शन कितना निकटतम होता है।',
+    'route1.label': 'रास्ता एक',
+    'route1.name': 'कॉलेजों के लिए',
+    'route1.desc': 'हम आपके कैम्पस पर आकर पूरे बैच को पढ़ाते हैं। Entrepreneurship cell के माध्यम से व्यवस्थित, संस्था द्वारा भुगतान।',
+    'route1.f1': '<strong>कैम्पस सेमिनार</strong> &mdash; 2 घंटे, पूरा बैच',
+    'route1.f2': '<strong>फार्मा-टेक कार्यशाला</strong> &mdash; 1&ndash;2 दिन, हस्त-प्रशिक्षण',
+    'route1.f3': '<strong>उद्योग भागीदारी</strong> &mdash; केस-दर-केस चर्चा',
+    'route1.cta': 'प्रस्ताव का अनुरोध करें',
+    'route1.note': 'प्राचार्यों और RIEDC समन्वयकों के लिए। संस्थागत शुल्क; छात्रों को कोई भुगतान नहीं।',
+    'route2.label': 'रास्ता दो',
+    'route2.name': 'चिकित्सकों और छात्रों के लिए',
+    'route2.desc': 'स्वयं एक छोटे कोहॉर्ट में शामिल हों। चारों ज़ोन में आठ से बारह सप्ताह का सीधा मेंटरशिप, एक ही मार्गदर्शक टीम के साथ।',
+    'route2.f1': '<strong>फाउंडर ट्रैक</strong> &mdash; 8&ndash;12 सप्ताह कोहॉर्ट',
+    'route2.f2': 'छोटा समूह, इसलिए हर सवाल का जवाब मिलता है',
+    'route2.f3': 'स्वर्ण सोपान पर समाप्त, पूर्ण प्रमाणन',
+    'route2.cta': 'अगले कोहॉर्ट में शामिल हों',
+    'route2.note': 'BAMS और MD छात्रों के लिए, और इकाई शुरू करने की तैयारी कर रहे चिकित्सकों के लिए।',
+    'mentors.title': 'उनसे सीखें जो आज भी यह काम करते हैं',
+    'mentors.desc1': 'अकादमी का नेतृत्व डॉ. विकास सरोच और डॉ. नीतिका सरोच करते हैं, दोनों MD (आयुर्वेद), और नैदानिक अभ्यास एवं लाइसेंस्ड विनिर्माण से आए मार्गदर्शकों की एक टोली द्वारा पढ़ाया जाता है। अभ्यास और GMP-प्रमाणित इकाई के तकनीकी निर्देशन के बीच, यहाँ जो पढ़ाया जाता है वही उत्पादन में प्रयोग होता है &mdash; इसीलिए सत्र व्याख्यान नहीं, प्रदर्शन हैं।',
+    'mentors.desc2': 'HHAP, शिक्षण के पीछे की इकाई, AYUSH विनिर्माण लाइसेंस HP-301-Ay रखती है और काँगड़ा, हिमाचल प्रदेश से संचालित है।',
+    'mentors.cadre': 'मार्गदर्शक मण्डली',
+    'mentors.cadre_note': 'अनुभवी चिकित्सक और विनिर्माण विशेषज्ञ मार्गदर्शक मण्डली में शामिल होने के लिए आवेदन कर सकते हैं।',
+    'stat.s1': 'विशेषज्ञता',
+    'stat.s2': 'शिक्षण के पीछे प्रमाणित इकाई',
+    'stat.s3': 'पाठ्यक्रम ज़ोन',
+    'stat.s4': 'टीम से peer-reviewed प्रकाशन',
+    'cta.title': 'बताइए कौन-सा रास्ता उपयुक्त है',
+    'cta.desc': 'कॉलेज: तिथि सीमा भेजें और हम लेटरहेड पर प्रस्ताव भेजेंगे। व्यक्तिगत: बताएँ कि आप अपने प्रशिक्षण में कहाँ हैं और हम सही कोहॉर्ट की ओर मार्गदर्शन करेंगे।',
+    'cta.btn1': 'कॉलेज &mdash; प्रस्ताव का अनुरोध',
+    'cta.btn2': 'व्यक्तिगत &mdash; कोहॉर्ट में शामिल हों',
+    'footer.desc': 'भारत भर में आयुर्वेदिक चिकित्सकों और छात्रों के लिए रसशास्त्र और फार्मा-टेक मेंटरशिप, कैम्पस पर और कोहॉर्ट में।',
+    'footer.programmes': 'कार्यक्रम',
+    'footer.colleges': 'कॉलेजों के लिए',
+    'footer.founder': 'फाउंडर ट्रैक',
+    'footer.delivered': 'वितरण',
+    'footer.del1': 'पूरे भारत में, कैम्पस पर और ऑनलाइन।',
+    'footer.del2': 'इकाई काँगड़ा, हिमाचल प्रदेश में।'
+  };
+
+  // Restore saved language
+  try {
+    var saved = localStorage.getItem('aa-lang');
+    if (saved === 'hi') {
+      currentLang = 'hi';
+      applyLang('hi');
+      label.textContent = 'EN';
+      document.documentElement.setAttribute('lang', 'hi');
+    }
+  } catch(e) {}
+
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (lang === 'hi' && hi[key]) {
+        el.innerHTML = hi[key];
+      } else if (lang === 'en' && originals[key]) {
+        el.innerHTML = originals[key];
+      }
+    });
+  }
+
+  btn.addEventListener('click', function() {
+    if (currentLang === 'en') {
+      currentLang = 'hi';
+      applyLang('hi');
+      label.textContent = 'EN';
+      document.documentElement.setAttribute('lang', 'hi');
+    } else {
+      currentLang = 'en';
+      applyLang('en');
+      label.textContent = 'HI';
+      document.documentElement.setAttribute('lang', 'en');
+    }
+    try { localStorage.setItem('aa-lang', currentLang); } catch(e) {}
   });
 })();
 
