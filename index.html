@@ -364,49 +364,159 @@ p { margin: 0 0 1em; }
 .ladder-section {
   padding: 100px var(--gutter);
   text-align: center;
+  overflow: hidden;
 }
 .ladder-intro {
   max-width: 800px;
-  margin: 0 auto 48px;
+  margin: 0 auto 56px;
 }
 .ladder-intro h2 {
   font-size: clamp(28px, 4vw, 48px);
   margin-bottom: 16px;
 }
 .ladder-intro p {
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-muted);
   line-height: 1.8;
   font-family: var(--display);
   font-style: italic;
-  font-size: 18px;
 }
 .ladder {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  overflow-x: auto;
-  padding-bottom: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+/* Connecting line behind cards */
+.ladder::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, #C0C0C0 0%, #CD7F32 33%, #B87333 66%, var(--gold) 100%);
+  opacity: 0.3;
+  z-index: 0;
 }
 .ladder-step {
-  padding: 24px 40px;
+  position: relative;
+  z-index: 1;
+  padding: 32px 20px 28px;
   text-align: center;
-  white-space: nowrap;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  transition: all 0.5s var(--ease);
+  cursor: default;
+}
+.ladder-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+/* Metallic top accent bar */
+.ladder-step::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.5s var(--ease);
+}
+.ladder-step:hover::before {
+  left: 10%; right: 10%;
+}
+.ladder-step:nth-child(1)::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.ladder-step:nth-child(2)::before { background: linear-gradient(90deg, transparent, #B87333, transparent); }
+.ladder-step:nth-child(3)::before { background: linear-gradient(90deg, transparent, #CD7F32, transparent); }
+.ladder-step:nth-child(4)::before { background: linear-gradient(90deg, transparent, #C0C0C0, transparent); }
+/* Glow on hover */
+.ladder-step:nth-child(1):hover { border-color: rgba(212,169,64,0.4); box-shadow: 0 12px 40px rgba(212,169,64,0.15); }
+.ladder-step:nth-child(2):hover { border-color: rgba(184,115,51,0.4); box-shadow: 0 12px 40px rgba(184,115,51,0.15); }
+.ladder-step:nth-child(3):hover { border-color: rgba(205,127,50,0.4); box-shadow: 0 12px 40px rgba(205,127,50,0.12); }
+.ladder-step:nth-child(4):hover { border-color: rgba(192,192,192,0.4); box-shadow: 0 12px 40px rgba(192,192,192,0.1); }
+/* Zone count ring */
+.ladder-zone-count {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  font-family: var(--display);
+  font-size: 20px; font-weight: 700;
+  position: relative;
+}
+.ladder-step:nth-child(1) .ladder-zone-count {
+  background: linear-gradient(135deg, rgba(212,169,64,0.15), rgba(212,169,64,0.05));
+  border: 1.5px solid rgba(212,169,64,0.4);
+  color: var(--gold);
+}
+.ladder-step:nth-child(2) .ladder-zone-count {
+  background: linear-gradient(135deg, rgba(184,115,51,0.15), rgba(184,115,51,0.05));
+  border: 1.5px solid rgba(184,115,51,0.4);
+  color: #B87333;
+}
+.ladder-step:nth-child(3) .ladder-zone-count {
+  background: linear-gradient(135deg, rgba(205,127,50,0.15), rgba(205,127,50,0.05));
+  border: 1.5px solid rgba(205,127,50,0.4);
+  color: #CD7F32;
+}
+.ladder-step:nth-child(4) .ladder-zone-count {
+  background: linear-gradient(135deg, rgba(192,192,192,0.15), rgba(192,192,192,0.05));
+  border: 1.5px solid rgba(192,192,192,0.4);
+  color: #C0C0C0;
 }
 .ladder-metal {
   font-family: var(--display);
-  font-size: 28px; font-weight: 700;
-  margin-bottom: 4px;
+  font-size: clamp(24px, 2.5vw, 32px); font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
 }
-.ladder-metal.swarna { color: var(--gold); }
-.ladder-metal.tamra { color: #B87333; }
-.ladder-metal.kansya { color: #CD7F32; }
-.ladder-metal.rajata { color: #C0C0C0; }
-.ladder-zones {
+.ladder-metal.swarna {
+  background: linear-gradient(135deg, #E8C45A, #D4A940, #A8862F);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ladder-metal.tamra {
+  background: linear-gradient(135deg, #D4956B, #B87333, #8B5A2B);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ladder-metal.kansya {
+  background: linear-gradient(135deg, #E0A050, #CD7F32, #9A6428);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ladder-metal.rajata {
+  background: linear-gradient(135deg, #E8E8E8, #C0C0C0, #8A8A8A);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ladder-english {
   font-family: var(--body);
   font-size: 11px; font-weight: 500;
-  letter-spacing: 0.12em; text-transform: uppercase;
+  letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.ladder-zones {
+  font-family: var(--body);
+  font-size: 12px; font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+/* Light theme adjustments */
+[data-theme="light"] .ladder-metal.rajata { color: #7A7A7A; -webkit-text-fill-color: initial; background: none; }
+[data-theme="light"] .ladder-step { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+[data-theme="light"] .ladder-step:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+
+@media (max-width: 768px) {
+  .ladder { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ladder::before { display: none; }
+}
+@media (max-width: 440px) {
+  .ladder { grid-template-columns: 1fr; max-width: 280px; }
 }
 
 /* ── Four Zones ── */
@@ -1139,20 +1249,28 @@ p { margin: 0 0 1em; }
   </div>
   <div class="ladder reveal">
     <div class="ladder-step">
-      <div class="ladder-metal swarna">Swarna</div>
-      <div class="ladder-zones">Gold &mdash; all four, with certificate</div>
+      <div class="ladder-zone-count">4</div>
+      <div class="ladder-metal swarna" data-i18n="ladder-swarna">Swarna</div>
+      <div class="ladder-english" data-i18n="ladder-swarna-en">Gold</div>
+      <div class="ladder-zones" data-i18n="ladder-swarna-desc">All four zones, with certificate</div>
     </div>
     <div class="ladder-step">
-      <div class="ladder-metal tamra">Tamra</div>
-      <div class="ladder-zones">Copper &mdash; one zone</div>
+      <div class="ladder-zone-count">1</div>
+      <div class="ladder-metal tamra" data-i18n="ladder-tamra">Tamra</div>
+      <div class="ladder-english" data-i18n="ladder-tamra-en">Copper</div>
+      <div class="ladder-zones" data-i18n="ladder-tamra-desc">One zone mastery</div>
     </div>
     <div class="ladder-step">
-      <div class="ladder-metal kansya">Kansya</div>
-      <div class="ladder-zones">Bronze &mdash; two zones</div>
+      <div class="ladder-zone-count">2</div>
+      <div class="ladder-metal kansya" data-i18n="ladder-kansya">Kansya</div>
+      <div class="ladder-english" data-i18n="ladder-kansya-en">Bronze</div>
+      <div class="ladder-zones" data-i18n="ladder-kansya-desc">Two zone mastery</div>
     </div>
     <div class="ladder-step">
-      <div class="ladder-metal rajata">Rajata</div>
-      <div class="ladder-zones">Silver &mdash; three zones</div>
+      <div class="ladder-zone-count">3</div>
+      <div class="ladder-metal rajata" data-i18n="ladder-rajata">Rajata</div>
+      <div class="ladder-english" data-i18n="ladder-rajata-en">Silver</div>
+      <div class="ladder-zones" data-i18n="ladder-rajata-desc">Three zone mastery</div>
     </div>
   </div>
 </section>
@@ -1549,6 +1667,18 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     'taught.desc': 'MD विशेषज्ञों द्वारा पढ़ाया जाता है जो GMP-प्रमाणित विनिर्माण इकाई चलाते हैं, इसलिए आप जो सीखते हैं वही उत्पादन में आवश्यक है।',
     'ladder.eyebrow': 'प्रमाणन सोपान',
     'ladder.title': 'रसशास्त्र की धातुओं के नाम पर। प्रत्येक ज़ोन पूरा करने पर छात्र एक सोपान ऊपर चढ़ता है।',
+    'ladder-swarna': 'स्वर्ण',
+    'ladder-swarna-en': 'सोना',
+    'ladder-swarna-desc': 'चारों ज़ोन, प्रमाणपत्र सहित',
+    'ladder-tamra': 'ताम्र',
+    'ladder-tamra-en': 'ताँबा',
+    'ladder-tamra-desc': 'एक ज़ोन में दक्षता',
+    'ladder-kansya': 'कांस्य',
+    'ladder-kansya-en': 'काँसा',
+    'ladder-kansya-desc': 'दो ज़ोन में दक्षता',
+    'ladder-rajata': 'रजत',
+    'ladder-rajata-en': 'चाँदी',
+    'ladder-rajata-desc': 'तीन ज़ोन में दक्षता',
     'zones.title': 'चार ज़ोन, क्रमबद्ध शिक्षण',
     'zones.desc': 'प्रत्येक ज़ोन सामग्री के साथ एक कार्यशाला है। छात्र प्रमाणित करते हैं, तैयार करते हैं, प्रलेखित करते हैं और प्रस्तुत करते हैं &mdash; इसी क्रम में, क्योंकि काम इसी क्रम में होता है।',
     'zone1.label': '01 &ensp; प्रमाणीकरण',
